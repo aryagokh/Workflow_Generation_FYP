@@ -1,0 +1,41 @@
+Image_to_GCode_Research/
+├── data/
+│   ├── sample_images
+│   │   ├── sample_image_1.png 
+│   │   ├── sample_image_2.png  
+│   │   └── ... 
+│   ├── workflows
+│   │   ├── approach_1.png 
+│   │   ├── approach_2.png  
+│   │   └── ...  
+│   └── curated_dataset
+│       ├── dataset.csv         (100 images paths)
+│       └── images 
+│           ├── dataset_image_1.png 
+│           ├── dataset_image_2.png 
+│           └── ...
+├── docs/
+│   ├── documentation
+│   │   ├── workflow_1_documentation.doc
+│   │   ├── workflow_2_documentation.doc
+│   │   └── ... 
+│   └── papers                  (Research papers that are beneficial / related for our domain)
+│       ├── findings.doc        (central table which contains findings from each paper)
+│       ├── paper_1.pdf
+│       ├── paper_2.pdf
+│       └── ...
+├── src/   
+│   ├── config.py               (Contains a generic function to load environment variables)
+│   ├── approach_1
+│   │   ├── code_1.py
+│   │   └── code_2.py
+│   │   └── ...
+│   ├── approach_2    
+│   └── ...
+├── env/                        (Local virtual environment) 
+├── .env                        (Secrets & environment variables, ignored by Git)
+├── .gitignore
+├── requirements.txt            (Python dependencies)
+├── README.md
+├── LICENSE
+└── directory_structure.txt

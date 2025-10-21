@@ -1,3 +1,8 @@
+# Local files and folders
+temp/
+req.txt
+.env
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
