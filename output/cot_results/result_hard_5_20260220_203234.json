@@ -1,0 +1,54 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the cylindrical bar to create a flat reference surface and establish the Z-zero coordinate."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning",
+            "tool_speed": "600 RPM",
+            "description": "Rough turn the outer diameter of the stock from 65 mm down to the maximum part diameter of 60 mm for a total length of 115 mm."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning",
+            "tool_speed": "700 RPM",
+            "description": "Reduce the diameter from 60 mm to 45 mm starting from the front face to a depth of 90 mm (covering the \u00d810, \u00d820, \u00d830, taper, and \u00d845 sections)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning",
+            "tool_speed": "800 RPM",
+            "description": "Reduce the diameter from 45 mm to 30 mm starting from the front face to a depth of 50 mm (covering the \u00d810, \u00d820, and \u00d830 sections)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Turning",
+            "tool_speed": "800 RPM",
+            "description": "Machine a taper transition from the 30 mm diameter at Z-50 to the 45 mm diameter at Z-75, creating a 25 mm long conical section."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Step Turning",
+            "tool_speed": "1000 RPM",
+            "description": "Reduce the diameter from 30 mm to 20 mm starting from the front face to a depth of 25 mm (covering the \u00d810 and \u00d820 sections)."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Step Turning",
+            "tool_speed": "1200 RPM",
+            "description": "Reduce the diameter from 20 mm to 10 mm starting from the front face to a depth of 10 mm."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Chamfering",
+            "tool_speed": "800 RPM",
+            "description": "Apply a 1 mm chamfer to the external edge of the 30 mm diameter shoulder located at 25 mm from the front face."
+        }
+    ],
+    "reasoning": "The manufacturing process is designed to transform a 65mm x 150mm cast iron bar into a multi-stepped shaft with a total length of 115mm. \n\n1. **Material Analysis**: Cast iron requires stable speeds and generates brittle chips. The stock provides sufficient length (150mm) to allow for 35mm of chucking and clearance.\n2. **Setup**: The part is mounted with approximately 125mm protruding. Facing is the first priority to establish a precise datum.\n3. **Geometry Breakdown**: The part consists of six longitudinal segments: \u00d810 (10mm), \u00d820 (15mm), \u00d830 (25mm), a taper from \u00d830 to \u00d845 (25mm), \u00d845 (15mm), and \u00d860 (25mm). \n4. **Turning Strategy**: We use a 'largest-to-smallest' diameter approach to maintain workpiece rigidity. \n   - First, the entire part profile is roughed to the maximum diameter (60mm).\n   - Second, Step Turning is used to progressively create the shoulders at 45mm and 30mm.\n   - Third, the taper is machined between the 30mm and 45mm steps.\n   - Fourth, the smaller steps (20mm and 10mm) are turned.\n5. **Finishing**: A 1mm chamfer is added as specified at the transition of the 30mm diameter. RPMs are adjusted based on diameter to maintain a consistent surface speed (higher RPM for smaller diameters).",
+    "step_by_step_plan": "1. Secure the 150mm x 65mm cast iron bar in the CNC lathe chuck, ensuring at least 125mm of material extends beyond the jaws.\n2. Load the Facing tool and set the spindle to 800 RPM. Face the end of the bar to establish the Z=0 reference point.\n3. Use the Turning tool at 600 RPM to reduce the outer diameter of the bar to 60mm for a length of 115mm from the face.\n4. Switch to the Step Turning tool. At 700 RPM, turn the diameter down to 45mm for a length of 90mm (from Z0 to Z-90).\n5. Continue with the Step Turning tool at 800 RPM to turn the diameter down to 30mm for a length of 50mm (from Z0 to Z-50).\n6. Use the Turning tool at 800 RPM to cut the taper. Program the tool path to move linearly from X30 Z-50 to X45 Z-75.\n7. Use the Step Turning tool at 1000 RPM to reduce the diameter to 20mm for a length of 25mm (from Z0 to Z-25).\n8. Use the Step Turning tool at 1200 RPM to reduce the diameter to 10mm for a length of 10mm (from Z0 to Z-10).\n9. Load the Chamfering tool and at 800 RPM, apply a 1mm x 45-degree chamfer on the shoulder of the 30mm diameter section at the Z-25 position.\n10. Perform a final dimensional check using calipers or a micrometer to ensure all step lengths and diameters match the drawing before parting off or removing the workpiece."
+}

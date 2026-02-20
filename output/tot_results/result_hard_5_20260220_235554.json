@@ -1,0 +1,66 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool (Carbide)",
+            "tool_speed": "800 RPM",
+            "description": "Mount the 65mm diameter bar in the chuck with approximately 125mm protruding. Face the end of the bar to create a flat reference surface (Z=0)."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform a roughing pass to reduce the outer diameter from 65mm to 60mm for a total length of 115mm."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "700 RPM",
+            "description": "Machine the diameter down to 45mm from the front face (Z=0) to a depth of 90mm (leaving the 25mm length of the 60mm diameter section)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "850 RPM",
+            "description": "Machine the diameter down to 30mm from the front face (Z=0) to a depth of 75mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Machine the diameter down to 20mm from the front face (Z=0) to a depth of 25mm."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Machine the final step down to 10mm diameter from the front face (Z=0) to a depth of 10mm."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Taper Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Machine the taper connecting the 30mm diameter (at Z=50mm) to the 45mm diameter (at Z=75mm)."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "900 RPM",
+            "description": "Apply a 1mm x 45-degree chamfer at the shoulder transition between the 30mm diameter and the 20mm diameter (at Z=25mm)."
+        },
+        {
+            "step_number": 9,
+            "tool_name": "Finishing Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Perform a single continuous finishing pass across all diameters and the taper to ensure dimensional accuracy and surface finish."
+        },
+        {
+            "step_number": 10,
+            "tool_name": "Parting/Cut-off Tool",
+            "tool_speed": "500 RPM",
+            "description": "Cut the finished part from the remaining stock at a total length of 115mm from the front face."
+        }
+    ],
+    "reasoning": "The machining strategy was developed by prioritizing part rigidity and dimensional accuracy. \n\n1. **Feature Identification**: The part consists of five distinct cylindrical sections (\u00d810, \u00d820, \u00d830, \u00d845, \u00d860) and one tapered section. There is a specific 1mm chamfer at the \u00d830/\u00d820 junction. The total part length is 115mm, to be cut from a 150mm bar.\n\n2. **Strategy Evaluation**: \n   - *Strategy A (Small to Large)*: Machining the smallest diameter (10mm) first. This was rejected because subsequent heavy cuts on the larger diameters would cause significant vibration and potential deflection of the thin 10mm tip.\n   - *Strategy B (Large to Small / Sequential Steps)*: This is the preferred method. By reducing diameters in steps from the front face, the bulk of the material remains near the chuck for as long as possible, providing maximum support.\n\n3. **Refinement**: The taper is positioned between the 30mm and 45mm sections. To ensure a smooth transition, the steps are first roughed out as cylinders, and then the taper is cut. The chamfer is added after the main geometry is established but before the final finishing pass to remove any burrs created during the chamfering process. Although drilling was an available tool, the drawing does not specify any internal holes, so it was excluded from the workflow.\n\n4. **Final Decision**: The chosen workflow uses a 'Largest-to-Smallest' roughing approach followed by specific feature machining (taper and chamfer) and a final finishing pass for high-quality surface integrity on the cast iron material.",
+    "step_by_step_plan": "1. **Preparation**: Secure the 65mm x 150mm cast iron bar in a 3-jaw CNC chuck. Ensure at least 120mm of the bar is protruding to allow for the 115mm part length and parting tool width.\n2. **Zeroing**: Set the tool offset and establish the front face as Z=0.\n3. **Facing**: Use the facing tool to clean the front surface. This ensures all longitudinal measurements are accurate.\n4. **OD Roughing**: Turn the entire 115mm length to 60mm diameter. This removes the outer scale of the cast iron.\n5. **Primary Step-Downs**: \n   - Turn the section from Z=0 to Z=90 down to 45mm.\n   - Turn the section from Z=0 to Z=75 down to 30mm.\n   - Turn the section from Z=0 to Z=25 down to 20mm.\n   - Turn the section from Z=0 to Z=10 down to 10mm.\n6. **Tapering**: Program the tool to move linearly from (X30, Z-50) to (X45, Z-75) to create the conical transition.\n7. **Detailing**: Use the chamfering tool to create the 1mm 45-degree break on the edge of the 30mm diameter shoulder at Z-25.\n8. **Finishing**: Run a finishing cycle. Use a higher RPM and lower feed rate to achieve the desired surface finish on the cast iron, following the entire profile from the 10mm tip back to the 60mm shoulder.\n9. **Parting**: Use a parting tool at Z-115 to separate the finished component from the raw stock. Ensure coolant is applied to prevent tool breakage during the deep cut. \n10. **Inspection**: Verify all diameters (10, 20, 30, 45, 60) and the total length (115) against the engineering drawing using calipers or a micrometer."
+}

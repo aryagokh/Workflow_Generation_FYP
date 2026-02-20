@@ -1,0 +1,36 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "600 RPM",
+            "description": "Face the front end of the cast iron bar to create a flat reference surface and establish Z=0."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Remove bulk material in multiple passes to create the stepped profile, leaving finishing allowance on all diameters and shoulders."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Finish Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Perform final passes to achieve precise diameters and the specific step lengths of 20, 10, 10, 15, 20, and 25mm."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "600 RPM",
+            "description": "Apply 0.5mm chamfers at the tip and first step, 1mm at the second, 2mm at the third and fourth, and 3mm at the fifth step transition."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Parting Tool",
+            "tool_speed": "350 RPM",
+            "description": "Cut the finished 100mm part from the raw stock at the final shoulder face."
+        }
+    ],
+    "reasoning": "The engineering drawing illustrates a stepped shaft made of cast iron with six distinct cylindrical sections of varying lengths (20mm, 10mm, 10mm, 15mm, 20mm, and 25mm) totaling 100mm in length. The raw stock is a 65mm diameter bar, 150mm long. The manufacturing process requires facing to establish a reference, step turning to create the profile, chamfering to meet specific edge requirements (0.5mm, 1mm, 2mm, and 3mm), and finally parting off the finished component. Since no specific diameters are provided, the workflow focuses on the sequential reduction of the stock diameter and precise longitudinal movements. Taper turning is not required as all surfaces are either parallel or perpendicular to the axis, or involve 45-degree chamfers.",
+    "step_by_step_plan": "1. Load the 65mm x 150mm cast iron bar into the CNC lathe chuck, ensuring approximately 115mm of material extends beyond the jaws to allow for machining and parting clearance.\n2. Use a Facing Tool to clean the front face of the bar, setting the Z-axis zero point.\n3. Perform a Rough Turning operation using a standard turning tool. Sequence the cuts from the smallest diameter (right side of drawing) towards the largest, leaving a 0.5mm allowance for finishing.\n4. Perform Finish Turning to achieve the final diameters and the specified step lengths: 20mm, 10mm, 10mm, 15mm, 20mm, and 25mm.\n5. Execute Chamfering operations at the transitions between steps as indicated: 0.5mm at the front tip and first step, 1mm at the second step, 2mm at the third and fourth steps, and 3mm at the final step transition.\n6. Use a Parting Tool to cut the finished part from the remaining stock at a total length of 100mm from the front face.\n7. Inspect all dimensions and surface finishes against the drawing specifications."
+}

@@ -1,0 +1,36 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing",
+            "tool_speed": "800 RPM",
+            "description": "Face the end of the 65 mm diameter cast iron bar to establish a flat reference surface at Z=0."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning",
+            "tool_speed": "800 RPM",
+            "description": "Turn the outer diameter of the bar from 65 mm down to 50 mm for a total length of 125 mm from the front face."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning",
+            "tool_speed": "1000 RPM",
+            "description": "Reduce the diameter from 50 mm to 30 mm, starting from the front face (Z=0) to a depth of 75 mm (10 mm + 65 mm)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning",
+            "tool_speed": "1200 RPM",
+            "description": "Reduce the diameter from 30 mm to 15 mm, starting from the front face (Z=0) to a depth of 10 mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Turning",
+            "tool_speed": "500 RPM",
+            "description": "Perform a cutoff operation at 125 mm from the front face to separate the finished part from the remaining stock."
+        }
+    ],
+    "reasoning": "The manufacturing process for this cast iron stepped shaft begins with analyzing the drawing and the raw stock. The part consists of three stepped cylindrical sections with diameters of 50 mm, 30 mm, and 15 mm, and lengths of 50 mm, 65 mm, and 10 mm respectively. The total length of the finished part is 125 mm (50 + 65 + 10). The starting material is a 65 mm diameter, 150 mm long cast iron bar. \n\nFirst, I determine the workholding: the bar will be held in a 3-jaw chuck with approximately 135 mm protruding to allow for the 125 mm part length plus clearance for the parting tool. \n\nThe sequence of operations is designed to maintain maximum rigidity. I start by facing the part to establish a zero-point. Next, I perform a general turning operation to reduce the entire 125 mm length of the part to the largest required diameter (50 mm). This removes the bulk of the material from the 65 mm stock. \n\nThen, I use step turning to create the intermediate diameter of 30 mm. This section must extend 75 mm from the front face (covering the 10 mm of the smallest section and the 65 mm of the middle section). Finally, I perform another step turning operation to create the 15 mm diameter section at the very front for a length of 10 mm. \n\nSpeeds are selected based on cast iron's machinability, starting at 800 RPM for the larger diameter and increasing to 1200 RPM for the smallest diameter to maintain a consistent surface cutting speed. A final turning operation is used to cut the part to its finished length of 125 mm.",
+    "step_by_step_plan": "1. Secure the 65 mm diameter cast iron bar in the CNC lathe chuck, ensuring at least 135 mm of material extends beyond the chuck jaws.\n2. Load the Facing tool. Set the spindle speed to 800 RPM and face the end of the stock to create a clean, square reference surface. Set this face as Z=0.\n3. Load the Turning tool. Set the spindle speed to 800 RPM. Turn the diameter of the bar from 65 mm down to 50 mm for a length of 125 mm from the Z=0 face.\n4. Use the Step Turning operation with the spindle speed increased to 1000 RPM. Turn the section from the front face (Z=0) to a length of 75 mm, reducing the diameter from 50 mm to 30 mm.\n5. Use the Step Turning operation with the spindle speed increased to 1200 RPM. Turn the section from the front face (Z=0) to a length of 10 mm, reducing the diameter from 30 mm to 15 mm.\n6. Finally, use a Turning/Parting tool at a reduced speed of 500 RPM to cut the part off at exactly 125 mm from the front face. Ensure the part is supported during the cutoff to prevent damage."
+}

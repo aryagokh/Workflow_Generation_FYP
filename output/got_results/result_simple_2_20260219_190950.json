@@ -1,0 +1,36 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing",
+            "tool_speed": "500 RPM",
+            "description": "Face the end of the 65mm diameter cast iron bar to create a flat reference surface and establish the Z-axis zero point."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning",
+            "tool_speed": "600 RPM",
+            "description": "Rough turn the outer diameter of the stock from 65mm down to 60mm for a total length of 110mm from the faced end."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning",
+            "tool_speed": "800 RPM",
+            "description": "Reduce the diameter from 60mm to 35mm, starting from the free end for a length of 80mm (leaving 30mm at the 60mm diameter)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning",
+            "tool_speed": "1000 RPM",
+            "description": "Reduce the diameter from 35mm to 20mm, starting from the free end for a length of 50mm (leaving 30mm at the 35mm diameter)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Turning",
+            "tool_speed": "1200 RPM",
+            "description": "Perform a final finishing pass over all diameters (60mm, 35mm, 20mm) and the vertical shoulders to ensure dimensional accuracy and surface quality."
+        }
+    ],
+    "reasoning": "The manufacturing workflow was developed using a Graph of Thought approach to ensure logical dependencies and structural rigidity during machining. \n\n1. **Feature Identification**: The part is a stepped shaft with three distinct cylindrical sections: \u00d860x30mm, \u00d835x30mm, and \u00d820x50mm. Analysis for Tapering and Grooving confirms these features are absent; only Step Turning is required to create the shoulders.\n2. **Graph Construction**: \n   - **Node A (Facing)**: Prerequisite for all steps to establish the Z=0 reference.\n   - **Node B (Rough Turning \u00d860)**: Depends on Node A. This reduces the raw 65mm stock to the maximum part diameter.\n   - **Node C (Step Turning \u00d835)**: Depends on Node B. This creates the first major step.\n   - **Node D (Step Turning \u00d820)**: Depends on Node C. This creates the final, smallest step.\n   - **Node E (Finish Turning)**: Depends on Node D. Final pass for surface quality.\n3. **Logic & Optimization**: The dependencies follow a 'telescopic' reduction strategy (largest diameter to smallest). This ensures the workpiece remains as rigid as possible by keeping the bulk of the material near the chuck. By turning the entire length to \u00d860 first, we simplify the subsequent step-down operations. Tapering and Drilling were excluded as they were not present in the drawing analysis.\n4. **Sequence Extraction**: The final linear sequence (A->B->C->D->E) ensures that each operation has its prerequisite reference surfaces and material conditions met.",
+    "step_by_step_plan": "1. Setup: Secure the 150mm long, 65mm diameter cast iron bar in the CNC lathe chuck, ensuring approximately 120mm of the bar protrudes from the jaws.\n2. Facing: Load the Facing tool. Set the spindle speed to 500 RPM and face the front of the bar to establish the Z-zero coordinate.\n3. Primary Turning: Load the Turning tool. Set the speed to 600 RPM and turn the diameter from 65mm to 60mm for a length of 110mm from the face.\n4. First Step Reduction: Load the Step Turning tool. Set the speed to 800 RPM. Turn the diameter down to 35mm, starting from the face (Z0) and moving to a depth of 80mm (Z-80).\n5. Second Step Reduction: Using the Step Turning tool, increase speed to 1000 RPM. Turn the diameter down from 35mm to 20mm, starting from the face (Z0) and moving to a depth of 50mm (Z-50).\n6. Finishing Pass: Switch back to the Turning tool (or a finishing insert). Set the speed to 1200 RPM. Take a light pass (approx. 0.25mm - 0.5mm) across the \u00d820, \u00d835, and \u00d860 surfaces and the connecting shoulders to reach final tolerances.\n7. Final Inspection: Use a micrometer to verify the diameters (20mm, 35mm, 60mm) and a depth gauge or calipers to verify the step lengths (50mm, 30mm, 30mm)."
+}

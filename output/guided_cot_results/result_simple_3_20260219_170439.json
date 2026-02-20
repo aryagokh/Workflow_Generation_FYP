@@ -1,0 +1,48 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "600 RPM",
+            "description": "Mount the 65mm diameter bar in the CNC lathe chuck with approximately 140mm protruding. Face the front end of the workpiece to create a smooth, flat reference surface and establish the Z-zero coordinate."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Perform a rough turning operation across a length of 130mm to reduce the raw diameter from 65mm to 61mm. This prepares the stock for the largest step of the part."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Machine the second step by reducing the diameter from 61mm to 41mm for a length of 100mm (measured from the front face). This covers the segments for both the 40mm and 25mm final diameters."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Machine the third step by reducing the diameter from 41mm to 26mm for a length of 40mm from the front face."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Finishing Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Perform finish turning passes on all three diameters to reach final specifications: \u00d860mm (30mm length), \u00d840mm (60mm length), and \u00d825mm (40mm length). This ensures the required surface finish and dimensional accuracy."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "800 RPM",
+            "description": "Apply 1mm x 45-degree chamfers to the outer edges of the \u00d825mm and \u00d840mm steps to remove sharp corners and improve safety/aesthetics."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Parting Tool / Facing Tool",
+            "tool_speed": "500 RPM",
+            "description": "Cut the finished part to its total length of 130mm from the stock or flip the part in the chuck and face the back side to achieve the final 130mm overall length."
+        }
+    ],
+    "all_reasoning_process": "Analysis of the Engineering Drawing:\n1. Geometric Features: The part is a stepped shaft consisting of three distinct cylindrical sections. \n   - Section 1: Diameter 60 mm, Length 30 mm.\n   - Section 2: Diameter 40 mm, Length 60 mm.\n   - Section 3: Diameter 25 mm, Length 40 mm.\n   - Total Length: 130 mm.\n2. Raw Material: Cast iron bar, 150 mm length, 65 mm diameter. This provides sufficient material for facing and parting.\n3. Feature Analysis for Tapering/Grooving: Upon close inspection, the drawing shows only perpendicular steps. There are no tapers (angled surfaces) or grooves (recessed channels) indicated. Therefore, the process will focus on Step Turning.\n4. Sequence Determination:\n   - Facing is performed first to establish a datum.\n   - Rough turning reduces the bulk material. We start with the largest diameter and work towards the smallest to maintain workpiece rigidity and minimize vibration.\n   - Step turning is used to create the \u00d840 and \u00d825 sections sequentially.\n   - Finishing passes are applied last to achieve the exact tolerances and surface quality.\n   - Chamfering is added as a final detail before the part is separated from the stock.\n5. Dependency Check: All diameters are referenced from the center axis, and lengths are cumulative from the front face. The sequence ensures that the part is always supported by the largest remaining diameter in the chuck for as long as possible.",
+    "step_by_step_plan": "1. Secure the 65mm diameter cast iron bar in the lathe chuck, ensuring it is centered and has enough clearance for the 130mm part length.\n2. Use a Facing Tool at 600 RPM to clean the front face of the bar.\n3. Use a Turning Tool at 500 RPM to rough turn the entire 130mm length to a diameter of 61mm.\n4. Use a Step Turning Tool at 600 RPM to turn a 100mm long section (from the end) down to 41mm diameter.\n5. Use a Step Turning Tool at 800 RPM to turn the first 40mm of the part down to 26mm diameter.\n6. Switch to a Finishing Tool at 1200 RPM. Carefully machine the \u00d860 section for 30mm, the \u00d840 section for 60mm, and the \u00d825 section for 40mm to meet the exact drawing dimensions.\n7. Use a Chamfering Tool to break the sharp edges on the front of the \u00d825 and \u00d840 steps.\n8. Finally, use a parting tool to cut the workpiece at the 130mm mark or flip the part to face the rear side to the final length."
+}

@@ -1,0 +1,60 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "600 RPM",
+            "description": "Mount the 65mm diameter cast iron bar in the chuck with approximately 135mm protruding. Face the end of the bar to create a flat reference surface (Z=0)."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Rough turn the outer diameter from 65mm down to 52mm over a length of 125mm from the face."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Finish Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Finish turn the 50mm diameter section to its final dimension over the full 125mm length to ensure concentricity."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "700 RPM",
+            "description": "Perform step turning to reduce the diameter from 50mm to 30mm, starting from 50mm from the face and extending 75mm to the end (covering both the 30mm and 15mm sections)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Finish Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Finish turn the 30mm diameter section to final tolerance for a length of 65mm (from Z-50 to Z-115)."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "900 RPM",
+            "description": "Perform step turning on the final section to reduce the diameter from 30mm to 15mm for a length of 10mm at the very end of the part."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Finish Turning Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Finish turn the 15mm diameter section to final tolerance for its 10mm length."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "800 RPM",
+            "description": "Apply 1mm x 45-degree chamfers to the edges of the 50mm, 30mm, and 15mm steps to remove sharp burrs."
+        },
+        {
+            "step_number": 9,
+            "tool_name": "Parting Tool",
+            "tool_speed": "400 RPM",
+            "description": "Cut the finished part from the remaining stock at the 125mm mark, or flip the part and face the back side to achieve the final total length of 125mm."
+        }
+    ],
+    "reasoning": "The part is a stepped shaft made of cast iron with three distinct diameters: 50mm, 30mm, and 15mm. The raw stock is 65mm in diameter and 150mm long. \n\nI evaluated three strategies:\n1. **Single Setup with Parting:** This involves chucking the 65mm stock and machining all diameters in one go. This is efficient but requires careful management of the 125mm overhang, which is roughly 2.5 times the base diameter (50mm). This is well within the stable limits for turning.\n2. **Two-Stage Setup (Flip Part):** Machining the 50mm section first, then flipping the part to machine the 30mm and 15mm sections. While this offers more rigidity, it introduces risks of concentricity errors between the sections if the second setup isn't perfectly aligned.\n3. **Roughing then Finishing Sequence:** This strategy focuses on removing the bulk of the material first across all steps before performing finishing passes. This minimizes tool wear and ensures better surface finish on the brittle cast iron.\n\nI chose a hybrid of Strategy 1 and 3. By machining from the largest diameter to the smallest while the part is held in a single setup, we maintain maximum rigidity. I decided to turn the entire 125mm length to 50mm first to clean the cast surface and establish a baseline, then step down to 30mm, and finally to 15mm. This 'telescopic' approach ensures that the part remains as thick as possible for as long as possible during the heavy material removal phases. Cast iron speeds were selected to balance productivity with tool life, using lower RPMs for roughing and higher RPMs for finishing.",
+    "step_by_step_plan": "1. Secure the 65mm diameter cast iron bar in a 3-jaw chuck, ensuring at least 25mm is held within the jaws for stability.\n2. Use a facing tool to clean the front face; this establishes the Z-zero coordinate.\n3. Use a rough turning tool to reduce the diameter from 65mm to 52mm for a length of 125mm. \n4. Use a finish turning tool to bring that 125mm length to a precise 50mm diameter.\n5. Move the tool to Z-50 (50mm from the face) and rough turn the remaining 75mm of the bar down to 32mm.\n6. Finish turn the 30mm diameter section for a length of 65mm (from Z-50 to Z-115).\n7. Move the tool to Z-115 and rough turn the final 10mm of the bar down to 17mm.\n8. Finish turn the 15mm diameter section for the final 10mm length.\n9. Use a chamfering tool to break the sharp edges on all three steps.\n10. Use a parting tool at the Z-0 (back side) or flip the part to face the back to reach the final 125mm total length."
+}

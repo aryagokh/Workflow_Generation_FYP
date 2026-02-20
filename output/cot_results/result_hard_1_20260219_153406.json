@@ -1,0 +1,42 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the 65 mm diameter cast iron bar to create a flat reference surface (Z=0) and clean the stock material."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Perform rough turning on the outer diameter of the bar, reducing it from 65 mm to 60 mm for a length of approximately 140 mm to prepare for feature machining."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Turn the section from the front face back to a length of 105 mm, reducing the diameter from 60 mm to 40 mm."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Machine a 10 mm wide groove (step) starting at 70 mm from the front face, reducing the diameter from 40 mm to 30 mm for that specific segment."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Perform taper turning on the first 40 mm of the part, reducing the diameter from 40 mm at the shoulder to 20 mm at the front face."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Part the workpiece at a total length of 135 mm from the front face and perform a final facing operation on the back end to achieve the required 60 mm diameter section length of 30 mm."
+        }
+    ],
+    "reasoning": "The manufacturing process is designed for a cast iron workpiece starting from a 150 mm x 65 mm cylindrical bar. The final part is 135 mm long with a maximum diameter of 60 mm. The sequence begins with facing to establish a datum. Next, the entire outer diameter is reduced to 60 mm to match the largest section of the drawing. I then identified three distinct zones within the 105 mm length that is reduced to 40 mm: a 30 mm long section at 40 mm dia, a 10 mm long section at 30 mm dia (treated as a step/groove), and a 25 mm long section at 40 mm dia. The final 40 mm of the part is a taper from 40 mm down to 20 mm. The operations are sequenced to maintain maximum rigidity, starting from the largest diameters and moving towards the smaller features, finishing with the taper and parting to length.",
+    "step_by_step_plan": "1. Secure the cast iron bar in the CNC lathe chuck, ensuring at least 140 mm is protruding. \n2. Use the Facing Tool to clean the end face and set the Z-axis zero point. \n3. Use the Turning Tool to reduce the stock diameter from 65 mm to 60 mm for the entire length of the part plus clearance. \n4. Use the Step Turning Tool to reduce the diameter to 40 mm for a total length of 105 mm from the front face. \n5. Use the Step Turning Tool to create the recessed middle section: at 70 mm from the front face, turn a 10 mm wide section down to 30 mm diameter. \n6. Use the Turning Tool to create the taper on the front end, moving from Z0 (20 mm diameter) to Z-40 (40 mm diameter). \n7. Verify all dimensions against the drawing (30 mm, 25 mm, 10 mm, 30 mm, 40 mm lengths and respective diameters). \n8. Use the Facing/Parting tool to cut the part to its final 135 mm length and finish the back face of the 60 mm diameter section."
+}

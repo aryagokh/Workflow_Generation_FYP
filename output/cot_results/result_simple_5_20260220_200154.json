@@ -1,0 +1,42 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "600 RPM",
+            "description": "Mount the 65mm diameter cast iron bar in the chuck with approximately 130mm protruding. Face the front end of the stock to establish the Z=0 reference point and ensure a flat surface."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Perform a rough turning operation to reduce the outer diameter from 65mm to 60mm over a length of 120mm from the faced end."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "700 RPM",
+            "description": "Turn the section from the face (Z=0) to a depth of 100mm to a diameter of 40mm. This leaves the leftmost 20mm section at the required 60mm diameter."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "900 RPM",
+            "description": "Turn the front-most section (from Z=0 to Z=50) to a diameter of 20mm. This creates the long 50mm shaft at the end."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "900 RPM",
+            "description": "Perform a step turning (recess/groove) operation between Z=60 and Z=80 (measured from the front face) to reduce the diameter from 40mm to 20mm. This creates the middle 20mm diameter section."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Perform a light finishing pass across all stepped surfaces to ensure dimensional accuracy and achieve the required surface finish for cast iron."
+        }
+    ],
+    "reasoning": "The part is a multi-stepped shaft made of cast iron. The raw stock is 65mm in diameter and 150mm long, while the finished part is 120mm long with a maximum diameter of 60mm. \n\n1. **Material Consideration**: Cast iron is brittle and requires moderate cutting speeds and rigid setups. \n2. **Setup**: The stock length (150mm) allows for 30mm of chucking area while machining the 120mm part length. \n3. **Coordinate System**: I will set Z=0 at the rightmost face (the end of the 50mm long, 20mm diameter section) as is standard for CNC turning. \n4. **Sequence Logic**: \n   - First, face the part to establish the reference.\n   - Second, reduce the overall diameter to the maximum required (60mm).\n   - Third, use step turning to create the 40mm diameter profile for the remaining 100mm length.\n   - Fourth, turn the end 50mm section down to 20mm.\n   - Fifth, create the internal 20mm diameter step (the recess between the two 40mm sections) by turning the region from Z=60 to Z=80.\n5. **Tooling**: A standard turning tool can handle the facing and outer diameter reductions. The internal 20mm section is wide enough (20mm) to be cleared using a standard turning tool or a step turning approach rather than a narrow grooving tool.",
+    "step_by_step_plan": "1. Secure the 65mm x 150mm cast iron bar in the CNC lathe chuck, ensuring at least 125mm is exposed.\n2. Load the Facing Tool and set the spindle to 600 RPM. Face the end of the bar to create a clean Z0 reference.\n3. Switch to the Turning Tool. Set speed to 500 RPM. Rough turn the diameter to 60mm for a length of 120mm from the face.\n4. Using the Step Turning Tool at 700 RPM, reduce the diameter to 40mm starting from Z0 to Z-100 (100mm deep). This defines the first shoulder.\n5. Continue with the Step Turning Tool at 900 RPM. Turn the first 50mm of the part (Z0 to Z-50) down to a diameter of 20mm.\n6. Move the tool to Z-60. Turn the section between Z-60 and Z-80 down to a diameter of 20mm. This creates the middle 'groove' section, leaving a 10mm wide collar of 40mm diameter at Z-50 to Z-60.\n7. Verify all dimensions: 20mm length for the 60mm dia section, 20mm length for the first 40mm dia section, 20mm length for the middle 20mm dia section, 10mm length for the second 40mm dia section, and 50mm length for the final 20mm dia section.\n8. Perform a final finishing pass at 1000 RPM to meet surface quality standards.\n9. Part off the finished 120mm component from the remaining stock."
+}

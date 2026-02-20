@@ -1,0 +1,36 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "500 RPM",
+            "description": "Mount the \u00d865 mm cast iron bar in the chuck with approximately 125 mm protruding. Face the end of the bar to create a flat reference surface and set the Z-axis zero point."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Perform a rough and finish turning operation on the outer diameter to reduce the stock from \u00d865 mm to \u00d860 mm over a length of 115 mm from the face."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "650 RPM",
+            "description": "Perform step turning to reduce the diameter from \u00d860 mm to \u00d835 mm. This cut should start from the front face and extend to a depth of 80 mm (covering the 50 mm and 30 mm sections)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "850 RPM",
+            "description": "Perform a final step turning operation to reduce the diameter from \u00d835 mm to \u00d820 mm. This cut starts from the front face and extends to a depth of 50 mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Parting Tool",
+            "tool_speed": "350 RPM",
+            "description": "Cut the finished part from the remaining stock at a total length of 110 mm from the finished face."
+        }
+    ],
+    "reasoning": "The part is a multi-stepped shaft made of cast iron. The raw stock is \u00d865 mm x 150 mm, while the maximum diameter of the part is \u00d860 mm and the total length is 110 mm. \n\n1. **Material Analysis**: Cast iron requires moderate cutting speeds and benefits from rigid setups. \n2. **Setup**: The stock is long enough (150mm) to allow for 110mm of part length plus clamping area. We will extend the bar enough to machine all steps in one setup to ensure concentricity.\n3. **Facing**: Essential to establish a datum (Z=0) and ensure the end is square.\n4. **OD Turning**: The first major diameter change is from the stock \u00d865 to the largest part diameter \u00d860. We turn this over the full length of the part (plus a small buffer) to ensure a clean surface.\n5. **Step Turning Sequence**: We work from the largest diameter to the smallest to maintain workpiece rigidity. \n   - First step: Turn the \u00d835 section. Since the \u00d820 section is further out, we turn the combined length of the \u00d835 and \u00d820 sections (30+50 = 80mm) to \u00d835 first.\n   - Second step: Turn the final \u00d820 section to its specific length (50mm).\n6. **Speeds**: Speeds are adjusted based on the diameter; as the diameter decreases, the RPM is increased to maintain a consistent surface speed (SFM), which is standard practice for CNC turning.\n7. **Finishing**: Parting off at the 110mm mark completes the geometry as per the drawing.",
+    "step_by_step_plan": "1. Secure the \u00d865 mm cast iron cylindrical bar in the CNC lathe chuck, ensuring it protrudes at least 125 mm to allow for the 110 mm part length and parting tool clearance.\n2. Load the Facing Tool. Set the spindle to 500 RPM and face the front end of the bar. Set this face as Z0 in the machine coordinate system.\n3. Load the Turning Tool. Rough turn the outer diameter to \u00d861 mm and then finish turn to \u00d860 mm for a total length of 115 mm from the face.\n4. Using the Step Turning Tool at 650 RPM, reduce the diameter to \u00d835 mm starting from Z0 to Z-80. Ensure a sharp 90-degree shoulder is maintained at the 80 mm mark.\n5. With the same tool or a finishing tool, increase speed to 850 RPM. Turn the front-most section to \u00d820 mm from Z0 to Z-50. Maintain the shoulder at the 50 mm mark.\n6. Verify all diameters (\u00d860, \u00d835, \u00d820) and lengths (30, 30, 50) using a calibrated vernier caliper.\n7. Load the Parting Tool. Set speed to 300-400 RPM and cut the part at Z-110. Ensure coolant is applied during parting to prevent tool breakage in cast iron."
+}

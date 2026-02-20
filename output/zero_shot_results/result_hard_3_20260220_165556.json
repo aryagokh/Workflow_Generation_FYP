@@ -1,0 +1,60 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Face the front end of the 65mm diameter raw stock to establish the Z=0 reference point and ensure a flat surface."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Perform an outer diameter roughing pass to reduce the entire length of the stock from \u00d865 mm to the maximum part diameter of \u00d860 mm."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Step turn the section from Z=45 mm to Z=145 mm down to a diameter of \u00d840 mm."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Step turn the section from Z=90 mm to Z=145 mm down to a diameter of \u00d820 mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Taper Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Machine the first taper transition from \u00d860 mm at Z=45 mm to \u00d840 mm at Z=70 mm."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Taper Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Machine the second taper transition from \u00d840 mm at Z=90 mm to \u00d820 mm at Z=115 mm."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Taper Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Machine the final taper at the tip from \u00d820 mm at Z=130 mm to \u00d85 mm at Z=145 mm."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Finishing Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Perform a continuous finish pass across the entire profile (\u00d860, Taper, \u00d840, Taper, \u00d820, Taper) to achieve final dimensions and surface finish."
+        },
+        {
+            "step_number": 9,
+            "tool_name": "Parting Tool",
+            "tool_speed": "500 RPM",
+            "description": "Cut the finished part from the remaining stock at the total length of 145 mm."
+        }
+    ],
+    "reasoning": "The part is a complex shaft consisting of three cylindrical steps (\u00d860, \u00d840, \u00d820) connected by two tapered sections, ending in a final conical taper. The raw stock is \u00d865 x 150mm cast iron. The strategy involves first preparing the stock by facing and reducing the overall diameter to the maximum required size (\u00d860). Then, a sequence of step turning operations is used to remove bulk material for the smaller diameters. Taper turning is applied specifically to the transition zones defined in the drawing. Finally, a finishing pass ensures the profile is smooth before parting the part to its final 145mm length.",
+    "step_by_step_plan": "1. Secure the \u00d865mm x 150mm cast iron bar in the lathe chuck with approximately 148mm protruding. 2. Face the end to set Z-zero. 3. Turn the entire outer diameter to \u00d860mm. 4. Perform step turning to reduce the diameter to \u00d840mm starting from 45mm from the face. 5. Perform a second step turn to reduce the diameter to \u00d820mm starting from 90mm from the face. 6. Program the taper from Z=45 to Z=70 (\u00d860 to \u00d840). 7. Program the taper from Z=90 to Z=115 (\u00d840 to \u00d820). 8. Program the final taper from Z=130 to Z=145 (\u00d820 to \u00d85). 9. Run a finishing cycle over the entire geometry. 10. Use the parting tool at Z=145 to separate the finished part from the excess stock."
+}

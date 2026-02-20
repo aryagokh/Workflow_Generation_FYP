@@ -1,0 +1,48 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "600",
+            "description": "Face the front end of the 65 mm diameter cast iron bar to establish a flat reference surface and set the Z-axis zero point."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "600",
+            "description": "Perform a rough turning operation along the entire 145 mm length to reduce the raw stock diameter from 65 mm to the maximum part diameter of 60 mm."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "800",
+            "description": "Reduce the diameter to 40 mm for the section starting 45 mm from the left face (Z-45) to the end of the part (Z-145)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1200",
+            "description": "Reduce the diameter to 20 mm for the section starting 90 mm from the left face (Z-90) to the end of the part (Z-145)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1000",
+            "description": "Perform taper turning to create the transition from 60 mm diameter to 40 mm diameter over a length of 25 mm (from Z-45 to Z-70)."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1200",
+            "description": "Perform taper turning to create the transition from 40 mm diameter to 20 mm diameter over a length of 25 mm (from Z-90 to Z-115)."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1500",
+            "description": "Perform the final taper turning at the tip, transitioning from 20 mm diameter to 5 mm diameter over a length of 15 mm (from Z-130 to Z-145)."
+        }
+    ],
+    "reasoning": "The manufacturing process begins with material preparation, using a 65 mm diameter cast iron bar. Cast iron is chosen for its machinability but requires controlled speeds to prevent tool chatter. The sequence starts with facing to establish a datum. Next, the largest diameter (60 mm) is established. To optimize material removal, step turning is employed to create the base cylindrical profiles for the 40 mm and 20 mm sections. This 'staircase' approach provides a stable foundation for the subsequent tapering operations. Finally, three distinct taper turning operations are performed to achieve the specific conical geometries defined in the drawing. The speeds are increased as the diameter decreases to maintain a consistent surface cutting speed (SFM).",
+    "step_by_step_plan": "1. Mount the 65 mm x 150 mm cast iron bar securely in the lathe chuck with approximately 148 mm protruding.\n2. Load the Facing Tool and face the end of the bar to reach the final part length of 145 mm, setting this as Z0.\n3. Use the Turning Tool to turn the outer diameter to 60 mm across the full length.\n4. Use the Step Turning Tool to turn the section from Z-45 to Z-145 down to a diameter of 40 mm.\n5. Use the Step Turning Tool to turn the section from Z-90 to Z-145 down to a diameter of 20 mm.\n6. Use the Turning Tool to interpolate the first taper from Diameter 60 at Z-45 to Diameter 40 at Z-70.\n7. Use the Turning Tool to interpolate the second taper from Diameter 40 at Z-90 to Diameter 20 at Z-115.\n8. Use the Turning Tool to interpolate the final taper from Diameter 20 at Z-130 to Diameter 5 at Z-145.\n9. Conduct a final inspection of all diameters and segment lengths against the engineering drawing.\n10. Remove the finished part from the chuck."
+}

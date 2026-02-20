@@ -1,0 +1,54 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "600 RPM",
+            "description": "Face the end of the 65mm diameter cast iron bar to establish a clean Z=0 reference plane for all subsequent measurements."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Turn the outer diameter of the bar from 65mm down to 60mm for a length of 110mm from the faced end to establish the maximum part diameter."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Reduce the section from the end (0mm) to 80mm to a diameter of 50mm. This prepares the stock for the collar and smaller forward diameters."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform step turning on the section between 60mm and 80mm from the end to reduce the diameter to 45mm. This creates the 10mm wide collar of 50mm diameter (located between 50mm and 60mm from the end)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Reduce the section from the end (0mm) to 50mm to a diameter of 35mm."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Reduce the front-most section from the end (0mm) to 5mm to a diameter of 25mm."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Taper Turning Tool",
+            "tool_speed": "700 RPM",
+            "description": "Execute a taper turning operation starting at 5mm from the end (at a diameter of 15mm) and ending at 35mm from the end (at a diameter of 35mm)."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "400 RPM",
+            "description": "Apply a 2mm x 45\u00b0 chamfer at the shoulder 80mm from the end (Dia 60 to 45 transition). Apply 1mm x 45\u00b0 chamfers at the shoulders 60mm and 50mm from the end (edges of the Dia 50 collar)."
+        }
+    ],
+    "reasoning": "The manufacturing process is planned using Graph of Thought reasoning to ensure all geometric dependencies are met efficiently. \n\n1. **Feature Identification**: The part consists of a series of cylindrical steps (Dia 60, 45, 50, 35, 25), a taper (Dia 15 to 35), and specific chamfers. The total length is 110mm, which fits within the 150mm stock. \n\n2. **Dependency Analysis**: \n- Facing is the root node as it establishes the Z-axis reference.\n- Rough turning to the maximum part diameter (60mm) is a prerequisite for all subsequent diameter reductions.\n- Step turning must proceed in a sequence that allows for the creation of collars. The Dia 50 section is a collar between Dia 45 and Dia 35, requiring a specific sequence: first turn the whole front to 50mm, then recess the 45mm section behind the collar, then turn the 35mm section in front of it.\n- Taper turning depends on the existence of the Dia 35 section and the Dia 25 end-cap face to define the start and end points.\n- Chamfering is a finishing operation that depends on the completion of the respective shoulders.\n\n3. **Optimization**: \n- The sequence is ordered to minimize tool changes and redundant movements. \n- Step turning operations are grouped by diameter to maintain structural rigidity, working from the chuck towards the free end where possible, but adjusting for the collar geometry. \n- The taper is machined after the bounding diameters are set to ensure precision at the transition points.\n\n4. **Linearization**: The graph is traversed from the reference face outwards, ensuring each step's prerequisite geometry is already prepared.",
+    "step_by_step_plan": "1. Preparation: Secure the 65mm x 150mm cast iron bar in the CNC lathe chuck, ensuring at least 120mm of the bar is protruding to allow for machining and eventual parting.\n2. Facing: Use a facing tool at 600 RPM to machine the front face of the bar. Set this as the Z=0 reference point.\n3. Primary Turning: Use a rough turning tool at 500 RPM to turn the diameter of the bar down to 60mm for a length of 110mm from the face.\n4. Collar and Recess Formation: \n   a. Step turn the section from 0mm to 80mm from the face down to a diameter of 50mm.\n   b. Create the recessed section by turning the area between 60mm and 80mm from the face down to 45mm diameter. This leaves a 10mm wide collar of 50mm diameter between the 50mm and 60mm marks.\n5. Front Section Turning: \n   a. Step turn the section from 0mm to 50mm from the face down to a diameter of 35mm.\n   b. Step turn the tip from 0mm to 5mm from the face down to a diameter of 25mm.\n6. Taper Machining: Use the taper turning tool (or a finishing tool with a programmed path) at 700 RPM. Program the tool to start at 5mm from the face with a diameter of 15mm and move linearly to 35mm from the face, ending at a diameter of 35mm.\n7. Finishing (Chamfering): \n   a. Apply a 2mm chamfer at the junction of the 60mm and 45mm diameters (80mm from the face).\n   b. Apply 1mm chamfers at both edges of the 50mm collar (at 60mm and 50mm from the face).\n8. Inspection: Verify all diameters (60, 45, 50, 35, 25, and the 15mm taper start) and lengths against the engineering drawing for quality assurance."
+}

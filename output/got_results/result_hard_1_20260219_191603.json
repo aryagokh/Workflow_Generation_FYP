@@ -1,0 +1,48 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the 65 mm diameter cast iron bar to establish a zero-reference plane (Z=0) and ensure a flat surface."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Rough turn the outer diameter of the bar from 65 mm to 60 mm for a total length of 135 mm from the faced end."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform step turning to reduce the diameter from 60 mm to 40 mm for a length of 105 mm (from Z=0 to Z=105)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Grooving Tool",
+            "tool_speed": "400 RPM",
+            "description": "Cut a 10 mm wide groove to a diameter of 30 mm. The groove starts 70 mm from the front face and ends at 80 mm (Z=70 to Z=80)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Taper Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Machine a taper at the front of the part, starting at a diameter of 20 mm at the face (Z=0) and increasing to 40 mm at a length of 40 mm (Z=40)."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "800 RPM",
+            "description": "Apply small chamfers to the edges of the steps and the front face to remove sharp burrs."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Parting Tool",
+            "tool_speed": "300 RPM",
+            "description": "Cut the finished part from the remaining stock at a total length of 135 mm from the front face."
+        }
+    ],
+    "reasoning": "The manufacturing process is planned using a dependency graph approach. \n\n1. **Feature Identification**: The part consists of a base (\u00d860, length 30), a step (\u00d840, length 25), a groove (\u00d830, length 10), another step (\u00d840, length 30), and a taper (\u00d820 to \u00d840, length 40). Total length is 135 mm.\n\n2. **Dependency Analysis**: \n   - Facing is the primary prerequisite to establish a reference surface.\n   - Rough turning the entire part to the largest finished diameter (\u00d860) is required before specific features are cut.\n   - Step turning the \u00d840 section (total length 105 mm) must occur before the groove or taper can be machined, as those features exist within the \u00d840 profile.\n   - Grooving and Tapering are independent of each other but depend on the \u00d840 step. \n   - Parting is the final operation after all features are verified.\n\n3. **Optimization**: To maximize rigidity, the \u00d840 section is turned as one continuous cylinder first. The groove is then cut into this cylinder. The taper is machined last among the profile features to maintain material bulk near the center for as long as possible. Chamfering is integrated before parting to ensure a clean finish.\n\n4. **Linear Extraction**: The resulting sequence follows: Facing -> OD Turning -> Step Turning -> Grooving -> Tapering -> Chamfering -> Parting.",
+    "step_by_step_plan": "1. Secure the 65 mm diameter, 150 mm long cast iron bar in the CNC lathe chuck, ensuring at least 140 mm of material extends beyond the jaws.\n2. Load the Facing Tool and face the end of the bar to create a clean, flat reference surface. Set this as Z=0 in the machine coordinate system.\n3. Use a Turning Tool to reduce the stock diameter from 65 mm to 60 mm for a length of 135 mm. This creates the base diameter for the entire part.\n4. Using a Step Turning operation, reduce the diameter from 60 mm to 40 mm starting from the front face (Z=0) up to a depth of 105 mm. This creates the blank for the forward sections.\n5. Switch to a Grooving Tool. Position the tool at Z=70 (70 mm from the front face). Cut a groove 10 mm wide down to a diameter of 30 mm (ending at Z=80).\n6. Use the Taper Turning function to machine the front section. Program the tool to move from X=20 at Z=0 to X=40 at Z=40, creating a smooth conical taper.\n7. Use a Chamfering tool or the turning tool to break sharp edges at the transition points (Z=0, Z=40, Z=70, Z=80, and Z=105).\n8. Finally, use a Parting Tool at Z=135 to cut the finished 135 mm part from the remaining stock. Ensure the spindle speed is reduced for the parting operation to prevent vibration."
+}

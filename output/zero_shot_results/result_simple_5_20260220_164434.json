@@ -1,0 +1,48 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "600 RPM",
+            "description": "Face the front end of the 65mm diameter cast iron bar to establish a clean Z=0 reference point."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Perform rough turning on the outer diameter from 65mm down to 61mm for a length of 125mm."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Finish Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Finish turn the first section to a diameter of 60mm for a length of 120mm from the face."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Turn the section from Z=0 to Z=-100 (100mm length from the face) down to a diameter of 40mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Turn the front-most section from Z=0 to Z=-50 (50mm length) down to a diameter of 20mm."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Grooving Tool (5mm width)",
+            "tool_speed": "400 RPM",
+            "description": "Machine the middle groove section between Z=-60 and Z=-80 to a diameter of 20mm. This creates the 20mm wide recessed section between the two 40mm diameter shoulders."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Parting Tool",
+            "tool_speed": "300 RPM",
+            "description": "Part off the finished component at a total length of 120mm from the front face."
+        }
+    ],
+    "reasoning": "The part consists of a series of cylindrical steps and a recessed groove-like section. The raw stock is 65mm in diameter and 150mm long, while the part's maximum diameter is 60mm and total length is 120mm. The sequence starts with facing and OD reduction to the maximum diameter. Then, step turning is performed from the smallest diameter at the tip towards the largest diameter at the base to maintain structural rigidity during machining. A grooving operation is specifically required for the internal 20mm diameter section located between two 40mm shoulders. Finally, the part is separated from the remaining stock using a parting tool.",
+    "step_by_step_plan": "1. Load the 65mm x 150mm cast iron bar into the CNC lathe chuck, ensuring at least 130mm of material protrudes. 2. Use the facing tool to clean the end face and set the Z-axis zero point. 3. Use a roughing tool to reduce the outer diameter to 61mm over a length of 125mm. 4. Switch to a finishing tool to bring the diameter to 60mm. 5. Perform step turning to reduce the diameter to 40mm for a length of 100mm from the face. 6. Further reduce the diameter to 20mm for the first 50mm of the part. 7. Move the tool to Z-60 and use a grooving tool or narrow turning tool to machine the section between Z-60 and Z-80 down to 20mm diameter, creating the central neck. 8. Verify all dimensions against the drawing (diameters 20, 40, 20, 40, 60 and lengths 50, 10, 20, 20, 20). 9. Use the parting tool at Z-120 to cut the finished part from the stock bar."
+}

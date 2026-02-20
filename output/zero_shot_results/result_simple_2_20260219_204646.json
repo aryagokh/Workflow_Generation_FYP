@@ -1,0 +1,36 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the 65 mm diameter cast iron bar to create a flat reference surface (Z=0) and ensure squareness."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Perform rough turning on the outer diameter, reducing the raw stock from 65 mm to 60 mm for a total length of approximately 115 mm from the face."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Turning Tool",
+            "tool_speed": "750 RPM",
+            "description": "Step turn the second section by reducing the diameter from 60 mm to 35 mm for a length of 80 mm (the combined length of the 35 mm and 20 mm sections) from the front face."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Step turn the final section by reducing the diameter from 35 mm to 20 mm for a length of 50 mm from the front face."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Parting Tool",
+            "tool_speed": "400 RPM",
+            "description": "Part off the finished workpiece from the remaining stock at a total length of 110 mm (30 + 30 + 50 mm) from the front face."
+        }
+    ],
+    "reasoning": "The part is a stepped shaft with three distinct diameters (60 mm, 35 mm, and 20 mm) and a total length of 110 mm. Starting with a 150 mm x 65 mm cast iron bar, the strategy involves first establishing a reference face, then sequentially turning the diameters from the largest to the smallest to maintain workpiece rigidity. Since the raw stock is only 5 mm larger than the largest finished diameter, a single roughing pass for the main body is efficient. The step turning is performed by moving the tool from the end face to the required depth for each diameter. Finally, parting off is necessary to separate the 110 mm part from the 150 mm stock.",
+    "step_by_step_plan": "1. Mount the 150 mm long, 65 mm diameter cast iron bar in a three-jaw chuck, ensuring at least 125 mm of material extends beyond the chuck jaws. 2. Load the facing tool and face the exposed end to establish the Z-zero datum. 3. Use a turning tool to reduce the outer diameter of the bar from 65 mm to 60 mm for a length of 115 mm. 4. Using the same turning tool, perform step turning to reduce the diameter to 35 mm starting from the face (Z0) to a depth of 80 mm (Z-80). 5. Further reduce the diameter to 20 mm from the face (Z0) to a depth of 50 mm (Z-50). 6. Verify all diameters (60, 35, 20) and lengths (30, 30, 50) with a vernier caliper. 7. Switch to a parting tool and cut the part at Z-110 to achieve the final length."
+}

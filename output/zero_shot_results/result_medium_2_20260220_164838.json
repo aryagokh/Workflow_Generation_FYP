@@ -1,0 +1,54 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "500 RPM",
+            "description": "Face the front end of the 65mm diameter cast iron bar to establish the Z=0 reference point and ensure a flat surface."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform rough turning passes to reduce the outer diameter from 65mm to 61mm across the entire accessible length of the part."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Finish Turning Tool",
+            "tool_speed": "900 RPM",
+            "description": "Finish turn the main body to a diameter of 60mm for the first 35mm length from the chuck side."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Turn the 10mm wide groove/section to a diameter of 45mm, followed by the 20mm section to a diameter of 55mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Turn the next 20mm section to a diameter of 45mm, and the subsequent 40mm section to a diameter of 30mm."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Turn the 15mm section to a diameter of 35mm and the final 10mm tip to a diameter of 20mm."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "500 RPM",
+            "description": "Apply a 1mm chamfer at the edge of the second 45mm diameter section and a 2mm chamfer at the face of the 35mm diameter section as per drawing specifications."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Finish Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Perform final finishing passes on all diameters and faces to achieve the required dimensional accuracy and surface finish."
+        }
+    ],
+    "reasoning": "The part is a multi-stepped shaft with varying diameters ranging from 20mm to 60mm. The raw stock is exactly the length of the final part (150mm), which requires precise setup to avoid material loss during facing. The machining sequence starts from the largest diameter (closest to the chuck) and progresses to the smallest diameter (at the free end) to maintain maximum rigidity. Step turning is used for the various diameters, and specific chamfering operations are required at transitions. Cast iron requires moderate speeds for roughing and higher speeds for finishing to manage heat and tool wear.",
+    "step_by_step_plan": "1. Secure the 65mm x 150mm cast iron bar in a 3-jaw chuck, ensuring at least 120mm is protruding if possible, or use a tailstock for support due to the length-to-diameter ratio. 2. Face the exposed end to clean the surface. 3. Rough turn the entire profile to within 0.5mm of the final dimensions. 4. Execute step turning starting from the chuck side: leave 35mm at \u00d860, then turn 10mm to \u00d845, 20mm to \u00d855, 20mm to \u00d845, 40mm to \u00d830, 15mm to \u00d835, and finally 10mm to \u00d820. 5. Use a chamfering tool or the turning tool at a 45-degree angle to create the 1mm chamfer on the \u00d845 shoulder and the 2mm chamfer on the \u00d835 face. 6. Perform a final finish pass across all surfaces to meet tolerance requirements. 7. Inspect all longitudinal dimensions (35, 10, 20, 20, 40, 15, 10) and diameters (60, 45, 55, 45, 30, 35, 20) against the engineering drawing."
+}

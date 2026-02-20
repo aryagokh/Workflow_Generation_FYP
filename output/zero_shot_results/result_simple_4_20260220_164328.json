@@ -1,0 +1,42 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "500 RPM",
+            "description": "Face the front end of the 65 mm diameter cast iron bar to create a flat reference surface and establish the Z-axis zero point."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Turn the outer diameter of the bar from 65 mm down to 60 mm for a total length of 120 mm from the front face."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Turning Tool",
+            "tool_speed": "650 RPM",
+            "description": "Perform step turning to reduce the diameter from 60 mm to 45 mm for a length of 90 mm from the front face (covering the 45 mm, 30 mm, and 15 mm sections)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Perform step turning to reduce the diameter from 45 mm to 30 mm for a length of 60 mm from the front face (covering the 30 mm and 15 mm sections)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Perform step turning to reduce the diameter from 30 mm to 15 mm for a length of 10 mm from the front face."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Parting Tool",
+            "tool_speed": "300 RPM",
+            "description": "Part off the finished workpiece from the remaining stock at a length of 120 mm from the front face."
+        }
+    ],
+    "reasoning": "The part is a stepped shaft with four distinct diameters: 60 mm, 45 mm, 30 mm, and 15 mm. The total length of the part is 120 mm (30+30+50+10). Starting with a 65 mm x 150 mm cast iron bar, the manufacturing strategy involves facing the end for reference, then sequentially turning down the diameters. We start by turning the entire part length to the maximum diameter (60 mm), then progressively turn the smaller steps (45 mm, 30 mm, and 15 mm) from the front end. This approach ensures maximum rigidity during the initial heavy cuts. Finally, the part is cut to its final length using a parting tool.",
+    "step_by_step_plan": "1. Secure the 65 mm diameter cast iron bar in the lathe chuck, ensuring at least 130 mm of material is protruding. 2. Mount the facing tool and face the end of the stock to set the Z=0 reference. 3. Switch to a turning tool; rough and finish turn the diameter to 60 mm for a length of 120 mm. 4. Using the turning tool, reduce the diameter to 45 mm starting from the front face to a depth of 90 mm. 5. Further reduce the diameter to 30 mm from the front face to a depth of 60 mm. 6. Reduce the final section to 15 mm diameter from the front face to a depth of 10 mm. 7. Verify all step lengths (10 mm, 50 mm, 30 mm, 30 mm) and diameters. 8. Mount the parting tool and cut the part at the 120 mm mark while maintaining a steady, low RPM to ensure a clean break."
+}

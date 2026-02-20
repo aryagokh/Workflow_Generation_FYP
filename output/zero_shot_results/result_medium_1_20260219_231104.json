@@ -1,0 +1,54 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the 65mm diameter bar to establish the Z-zero reference point and ensure a flat surface."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Rough turn the outer diameter of the bar from 65mm to 60mm over a length of 140mm from the front face."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Turning Tool",
+            "tool_speed": "700 RPM",
+            "description": "Perform step turning to reduce the diameter from 60mm to 55mm, starting from the front face and moving to a depth of 100mm (Z-100)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Perform step turning to reduce the diameter from 55mm to 35mm, starting from the front face to a depth of 50mm (Z-50)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Turn the section between 10mm and 50mm from the front face down to a diameter of 30mm, leaving a 10mm wide flange of 35mm diameter at the front."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Grooving Tool (10mm width)",
+            "tool_speed": "400 RPM",
+            "description": "Cut a groove to a diameter of 45mm at a position between 90mm and 100mm from the front face (Z-90 to Z-100)."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "600 RPM",
+            "description": "Apply a 2mm x 45-degree chamfer to the front edge of the 35mm diameter section and the shoulder of the 55mm diameter section."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Parting Tool",
+            "tool_speed": "300 RPM",
+            "description": "Part off the finished component at a total length of 135mm from the front face."
+        }
+    ],
+    "reasoning": "The manufacturing sequence is designed to maximize rigidity and accuracy. We start by facing the stock to create a datum. Since the raw stock is 65mm and the largest part diameter is 60mm, an initial turning pass is required. We then work from the largest diameters to the smallest to maintain structural integrity during cutting. The step turning creates the primary profile (60, 55, 35, 30 mm). A specific grooving operation is used for the 45mm diameter relief because it is recessed between two larger diameters. Chamfering is performed before parting to ensure the final part is deburred and meets drawing specifications. Cast iron is machined at moderate speeds to manage tool wear and chip formation.",
+    "step_by_step_plan": "1. Secure the 65mm x 150mm cast iron bar in a 3-jaw chuck, allowing 145mm to protrude. 2. Load the facing tool and set the spindle to 800 RPM; face the end to Z0. 3. Switch to a rough turning tool; turn the entire length to 60mm diameter. 4. Execute a step turn to 55mm diameter for a length of 100mm from the face. 5. Execute a step turn to 35mm diameter for a length of 50mm from the face. 6. Turn the internal section (from Z-10 to Z-50) down to 30mm diameter. 7. Load a 10mm wide grooving tool; locate it 90mm from the front face and plunge to a diameter of 45mm. 8. Use a chamfering tool to apply 2mm chamfers on the front 35mm edge and the 55mm shoulder. 9. Finally, use a parting tool at Z-135 to cut the part to its final length, ensuring a clean break-off."
+}

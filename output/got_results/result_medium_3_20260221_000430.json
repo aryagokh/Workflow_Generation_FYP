@@ -1,0 +1,66 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the cast iron bar to establish a clean reference surface at Z=0."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning",
+            "tool_speed": "600 RPM",
+            "description": "Rough turn the outer diameter of the bar from 65mm to 60mm for a length of 130mm."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning",
+            "tool_speed": "700 RPM",
+            "description": "Turn the diameter down to 45mm from Z=0 to Z=120mm, leaving a 10mm thick flange of 60mm diameter at the chuck side."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning",
+            "tool_speed": "800 RPM",
+            "description": "Turn the recessed section between Z=85mm and Z=120mm down to 30mm diameter, defining the 10mm wide Dia 45 flange."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning",
+            "tool_speed": "800 RPM",
+            "description": "Turn the section from the front end (Z=0) to Z=75mm down to 35mm diameter."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Step Turning",
+            "tool_speed": "900 RPM",
+            "description": "Turn the front section from Z=0 to Z=45mm down to 25mm diameter."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Step Turning",
+            "tool_speed": "1000 RPM",
+            "description": "Turn the section between Z=10mm and Z=45mm down to 20mm diameter, leaving a 10mm long cap of 25mm diameter at the front."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Step Turning",
+            "tool_speed": "1000 RPM",
+            "description": "Turn the neck/groove section between Z=5mm and Z=10mm down to 15mm diameter."
+        },
+        {
+            "step_number": 9,
+            "tool_name": "Chamfering",
+            "tool_speed": "600 RPM",
+            "description": "Apply a 1mm chamfer at the Z=0 edge (Dia 25), a 2mm chamfer at the Z=45 shoulder (Dia 35), and a 1mm chamfer at the Z=75 shoulder (Dia 45)."
+        },
+        {
+            "step_number": 10,
+            "tool_name": "Turning",
+            "tool_speed": "400 RPM",
+            "description": "Part off the finished 130mm long component from the remaining stock material."
+        }
+    ],
+    "reasoning": "The manufacturing plan was developed using Graph of Thought reasoning to ensure structural integrity and efficiency. \n\n1. **Feature Identification**: The part consists of seven distinct diameters (60, 30, 45, 35, 20, 15, 25) across a total length of 130mm. Key features include a recessed step (Dia 30), a neck/groove (Dia 15), and three specific chamfers (1mm, 2mm, 1mm).\n\n2. **Dependency Mapping**: \n   - Facing is the mandatory first step to establish the Z=0 reference.\n   - Rough turning to the maximum part diameter (60mm) is required before any step turning.\n   - Larger diameter reductions (Dia 45) must precede smaller ones (Dia 35, 25) to maintain workpiece rigidity.\n   - The Dia 30 recess depends on the Dia 45 step being established.\n   - The Dia 15 neck depends on the Dia 25 and Dia 20 steps being established.\n   - Chamfering is a finishing operation that depends on the completion of the respective shoulders.\n   - Parting off is the final operation.\n\n3. **Optimization Strategy**: To minimize tool travel and maximize stability, the sequence follows a 'back-to-front' logic for major steps while handling internal recesses (Dia 30 and Dia 15) immediately after their parent diameters are turned. This reduces the risk of vibration on the thinner sections. Chamfering operations are grouped to minimize tool changes.\n\n4. **Dimensional Logic**: Z-coordinates were calculated from the right face (Z=0). \n   - Dia 25: 0-5mm\n   - Dia 15: 5-10mm\n   - Dia 20: 10-45mm\n   - Dia 35: 45-75mm\n   - Dia 45: 75-85mm\n   - Dia 30: 85-120mm\n   - Dia 60: 120-130mm\nTotal length = 130mm, which fits within the 150mm stock provided.",
+    "step_by_step_plan": "1. **Preparation**: Secure the 150mm long, 65mm diameter cast iron bar in the CNC lathe chuck, ensuring at least 135mm of the bar extends beyond the chuck jaws.\n2. **Facing**: Use a Facing tool at 800 RPM to clean the end of the bar, setting this face as the Z=0 coordinate.\n3. **Outer Diameter Roughing**: Use a Turning tool at 600 RPM to reduce the bar diameter to 60mm for a length of 130mm from the face.\n4. **Primary Step Turning**: Use a Step Turning tool at 700 RPM to reduce the diameter to 45mm from Z=0 to Z=120. This leaves the 10mm thick, 60mm diameter flange at the rear.\n5. **Recess Creation**: Use the Step Turning tool at 800 RPM to turn the section from Z=85 to Z=120 down to 30mm diameter. This creates the Dia 45 flange (10mm wide) between the Dia 30 and Dia 60 sections.\n6. **Secondary Step Turning**: Reduce the diameter to 35mm from Z=0 to Z=75 at 800 RPM.\n7. **Front End Turning**: Reduce the diameter to 25mm from Z=0 to Z=45 at 900 RPM.\n8. **Neck and Shoulder Definition**: Turn the section from Z=10 to Z=45 down to 20mm diameter at 1000 RPM. This leaves a 10mm section at the front with 25mm diameter.\n9. **Grooving**: Use the Step Turning tool (or a narrow turning tool) at 1000 RPM to create the 15mm diameter neck between Z=5 and Z=10. This results in the final 5mm long Dia 25 cap at the tip.\n10. **Chamfering**: Switch to a Chamfering tool. Apply a 1mm x 45\u00b0 chamfer at Z=0. Apply a 2mm x 45\u00b0 chamfer at the shoulder at Z=45 (Dia 35). Apply a 1mm x 45\u00b0 chamfer at the shoulder at Z=75 (Dia 45).\n11. **Final Parting**: Use a Turning/Parting tool at 400 RPM to cut the part at Z=130mm, separating the finished component from the stock."
+}

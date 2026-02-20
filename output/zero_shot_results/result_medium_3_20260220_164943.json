@@ -1,0 +1,66 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the 65 mm diameter cast iron bar to establish a clean Z-zero reference surface."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Perform outer diameter turning to reduce the raw stock from 65 mm to 60 mm for a total length of 135 mm."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Turn the section from the front face (Z0) to Z-120 to a diameter of 45 mm, leaving the 60 mm flange at the rear."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "1100 RPM",
+            "description": "Turn the recessed section between Z-85 and Z-120 to a diameter of 30 mm (the 35 mm long section between the 60 mm and 45 mm flanges)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "1100 RPM",
+            "description": "Turn the section from Z0 to Z-75 to a diameter of 35 mm."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Turn the section from Z0 to Z-45 to a diameter of 20 mm."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Finish Turning Tool",
+            "tool_speed": "1300 RPM",
+            "description": "Finish turn the front-most section from Z0 to Z-5 to a diameter of 25 mm."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Grooving Tool (5mm width)",
+            "tool_speed": "600 RPM",
+            "description": "Cut a groove at a distance of 5 mm from the front face (Z-5 to Z-10) down to a diameter of 15 mm."
+        },
+        {
+            "step_number": 9,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "800 RPM",
+            "description": "Apply a 1 mm chamfer at the front edge (Z0), a 2 mm chamfer at the Dia 35 shoulder (Z-45), and a 1 mm chamfer at the Dia 45 shoulder (Z-75)."
+        },
+        {
+            "step_number": 10,
+            "tool_name": "Parting Tool",
+            "tool_speed": "500 RPM",
+            "description": "Part off the finished component from the remaining stock at a total length of 130 mm (Z-130)."
+        }
+    ],
+    "reasoning": "The part is a complex stepped shaft made from cast iron. The manufacturing strategy prioritizes rigidity by turning larger diameters first and progressing towards the smaller diameters at the free end. The total part length is 130 mm, which fits within the 150 mm raw stock. We start by establishing a reference face, then rough turn the maximum part diameter (60 mm). We then use step turning to create the various diameters (45, 35, 30, 25, 20 mm). A specific grooving operation is required for the 15 mm diameter undercut. Chamfering is performed as a finishing touch before the final parting-off operation to ensure the part meets all dimensional and edge requirements specified in the drawing.",
+    "step_by_step_plan": "1. Secure the 65 mm diameter cast iron bar in the lathe chuck with approximately 140 mm protruding.\n2. Use the Facing Tool to create a flat reference face at the end of the bar.\n3. Use a Rough Turning Tool to turn the entire work length to 60 mm diameter.\n4. Turn the section from the front face to a depth of 120 mm down to 45 mm diameter.\n5. Turn the 35 mm long section located 10 mm from the 60 mm shoulder down to 30 mm diameter.\n6. Turn the front 75 mm of the part down to 35 mm diameter.\n7. Turn the front 45 mm of the part down to 20 mm diameter.\n8. Turn the first 5 mm of the part down to 25 mm diameter.\n9. Use a 5 mm wide grooving tool to cut the 15 mm diameter groove starting 5 mm from the front face.\n10. Execute chamfering passes: 1 mm x 45\u00b0 at the front tip, 2 mm x 45\u00b0 at the transition to the 35 mm diameter, and 1 mm x 45\u00b0 at the transition to the 45 mm diameter.\n11. Final check of dimensions and use the parting tool to cut the part to its final 130 mm length."
+}

@@ -1,0 +1,48 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Face the front surface of the 65 mm diameter cast iron bar to create a flat reference datum (Z=0) and remove any surface irregularities."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform rough turning to reduce the overall diameter from 65 mm to 60 mm for a length of 110 mm. Then, create the primary steps by turning the section from Z=30 to Z=110 to a diameter of 50 mm, and the section from Z=60 to Z=110 to a diameter of 35 mm."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Turning/Grooving Tool",
+            "tool_speed": "600 RPM",
+            "description": "Machine the 20 mm wide recess to a diameter of 45 mm between the 60 mm and 50 mm diameter sections (from Z=30 to Z=50)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Taper Turning Tool",
+            "tool_speed": "700 RPM",
+            "description": "Execute a taper turning operation starting from the 35 mm diameter shoulder (at Z=75) down to a diameter of 15 mm (at Z=105) over a length of 30 mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Finishing Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Perform a finishing pass over the entire profile to achieve final tolerances. This includes turning the final 5 mm long disk to a diameter of 25 mm at the end of the part."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Apply a 2 mm chamfer at the shoulder transition of the 60 mm diameter section and 1 mm chamfers on both edges of the 50 mm diameter collar."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Parting Tool",
+            "tool_speed": "400 RPM",
+            "description": "Cut the finished part from the remaining stock at the 110 mm length mark (Z=0 relative to the back face) to complete the manufacturing process."
+        }
+    ],
+    "reasoning": "The manufacturing workflow is designed to progressively remove material from the largest diameter to the smallest to maintain workpiece rigidity. Starting with a 65 mm cast iron bar, the process begins with facing for a clean reference. Rough turning establishes the major diameters (60, 50, 35). The 45 mm recess is treated as a wide groove or step turn. Taper turning is required for the conical section transitioning from 35 mm to 15 mm. The final disk (25 mm) is turned at the tip. Chamfering is performed before the final parting-off operation to ensure all edges are deburred and meet drawing specifications. Cast iron requires moderate speeds and high torque, which is reflected in the RPM settings.",
+    "step_by_step_plan": "1. Secure the 150 mm long, 65 mm diameter cast iron bar in the lathe chuck, ensuring at least 115 mm is protruding.\n2. Load the Facing Tool and face the end of the bar to establish the Z-axis zero point.\n3. Load the Rough Turning Tool. Turn the outer diameter to 60 mm for a length of 110 mm. \n4. Continue with the turning tool to create the step for the 50 mm diameter collar (starting 30 mm from the left face) and the 35 mm diameter section (starting 60 mm from the left face).\n5. Machine the 45 mm diameter recess between the 30 mm and 50 mm marks.\n6. Program the CNC for a taper cut from 35 mm diameter at Z=75 to 15 mm diameter at Z=105.\n7. Turn the final 5 mm of the part to a diameter of 25 mm.\n8. Use a finishing tool to bring all diameters to exact size and apply the 2 mm chamfer on the 60 mm shoulder and 1 mm chamfers on the 50 mm collar.\n9. Inspect dimensions against the drawing.\n10. Load the Parting Tool and cut the part at the 110 mm mark while supporting the finished piece."
+}

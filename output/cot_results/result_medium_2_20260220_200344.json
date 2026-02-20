@@ -1,0 +1,48 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the \u00d865 cast iron bar to establish a clean Z-zero reference point."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool (Roughing)",
+            "tool_speed": "600 RPM",
+            "description": "Rough turn the outer diameter of the exposed stock from \u00d865 mm down to \u00d861 mm for a length of approximately 115 mm."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Turning Tool (Finishing)",
+            "tool_speed": "1200 RPM",
+            "description": "Perform step turning from the front face: turn \u00d820 mm for 10 mm length, then \u00d835 mm for 15 mm length, followed by \u00d830 mm for 40 mm length."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Turning Tool (Finishing)",
+            "tool_speed": "1000 RPM",
+            "description": "Continue step turning: turn \u00d845 mm for 20 mm length, \u00d855 mm for 20 mm length, and the final \u00d845 mm section for 10 mm length."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "500 RPM",
+            "description": "Apply a 2 mm chamfer at the transition between the \u00d820 and \u00d835 sections, and a 1 mm chamfer at the transition between the \u00d830 and \u00d845 sections."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Flip the part in the chuck, clamping on the finished \u00d845 or \u00d855 sections using soft jaws. Face the second end to achieve the total part length of 150 mm."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Turning Tool (Finishing)",
+            "tool_speed": "800 RPM",
+            "description": "Turn the remaining \u00d865 mm stock down to the final \u00d860 mm diameter for the remaining 35 mm length."
+        }
+    ],
+    "reasoning": "The manufacturing process is designed for a multi-stepped cylindrical part made of cast iron. The raw stock is \u00d865 mm x 150 mm, which matches the final part's total length, requiring precise facing to maintain dimensions. The part features several diameter changes (\u00d820, \u00d835, \u00d830, \u00d845, \u00d855, \u00d845, \u00d860) and specific chamfers. My reasoning follows a two-setup approach. Setup 1 focuses on machining the complex right-hand side of the drawing (\u00d820 through the second \u00d845 section) while clamping on the \u00d865 stock. This allows for continuous turning of the nested diameters and precise chamfering. Setup 2 involves flipping the part to finish the \u00d860 section and face the part to the exact 150 mm length. Cast iron is brittle and requires moderate speeds; I've selected RPMs that balance surface finish with tool life, using higher speeds for smaller diameters and finishing passes.",
+    "step_by_step_plan": "1. Load the \u00d865 mm x 150 mm cast iron bar into the CNC lathe chuck, ensuring at least 120 mm is protruding.\n2. Use the Facing Tool at 800 RPM to face the end of the bar, setting this as the Z0 coordinate.\n3. Use a Rough Turning Tool to reduce the stock diameter to \u00d861 mm for a length of 115 mm to remove the outer casting skin.\n4. Switch to a Finishing Turning Tool. Starting from Z0, turn the \u00d820 mm section to a length of 10 mm. \n5. Proceed to turn the \u00d835 mm section for the next 15 mm (Z-10 to Z-25).\n6. Turn the \u00d830 mm section for the next 40 mm (Z-25 to Z-65).\n7. Turn the \u00d845 mm section for the next 20 mm (Z-65 to Z-85).\n8. Turn the \u00d855 mm section for the next 20 mm (Z-85 to Z-105).\n9. Turn the final \u00d845 mm section for the next 10 mm (Z-105 to Z-115).\n10. Use the Chamfering Tool to create a 2 mm x 45\u00b0 chamfer on the edge of the \u00d835 shoulder and a 1 mm x 45\u00b0 chamfer on the edge of the first \u00d845 shoulder.\n11. Unclamp the part, flip it, and clamp on the \u00d855 or \u00d845 section using soft jaws to protect the finish.\n12. Face the remaining end to bring the total part length to exactly 150 mm.\n13. Turn the remaining \u00d865 mm stock down to \u00d860 mm for the final 35 mm length of the part.\n14. Inspect all diameters and lengths against the engineering drawing for quality assurance."
+}

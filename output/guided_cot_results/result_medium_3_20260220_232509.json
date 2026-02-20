@@ -1,0 +1,66 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing",
+            "tool_speed": "800 RPM",
+            "description": "Face the right end of the 65mm diameter bar to create a flat reference surface and establish the Z=0 coordinate."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning",
+            "tool_speed": "600 RPM",
+            "description": "Perform rough turning to reduce the outer diameter from 65mm to 60mm over a length of 130mm from the face."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning",
+            "tool_speed": "600 RPM",
+            "description": "Turn the section from Z=0 to Z=120 to a diameter of 45mm, leaving the 10mm thick flange at \u00d860mm on the left."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning",
+            "tool_speed": "700 RPM",
+            "description": "Turn the recessed segment between Z=85 and Z=120 to a diameter of 30mm, creating the 35mm long neck."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning",
+            "tool_speed": "700 RPM",
+            "description": "Turn the front section from Z=0 to Z=75 to a diameter of 35mm, leaving the 10mm thick flange at \u00d845mm."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Step Turning",
+            "tool_speed": "800 RPM",
+            "description": "Turn the front section from Z=0 to Z=45 to a diameter of 25mm."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Step Turning",
+            "tool_speed": "800 RPM",
+            "description": "Turn the segment from Z=10 to Z=45 to a diameter of 20mm, leaving a 10mm section at \u00d825mm at the front."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Turning",
+            "tool_speed": "400 RPM",
+            "description": "Use a turning/grooving tool to reduce the diameter of the segment from Z=5 to Z=10 to \u00d815mm, creating the 5mm wide groove behind the front flange."
+        },
+        {
+            "step_number": 9,
+            "tool_name": "Chamfering",
+            "tool_speed": "600 RPM",
+            "description": "Apply a 1mm chamfer at the front edge (Z=0), a 2mm chamfer at the \u00d835 shoulder (Z=45), and a 1mm chamfer at the \u00d845 shoulder (Z=75)."
+        },
+        {
+            "step_number": 10,
+            "tool_name": "Turning",
+            "tool_speed": "400 RPM",
+            "description": "Part off the finished 130mm long component from the remaining stock held in the chuck."
+        }
+    ],
+    "all_reasoning_process": "The process planning began with a detailed analysis of the engineering drawing. The part is a stepped shaft with seven distinct diameter sections: \u00d860, \u00d830, \u00d845, \u00d835, \u00d820, \u00d815 (groove), and \u00d825. The total length of the part is calculated as 10+35+10+30+35+5+5 = 130mm. Given a 150mm long, 65mm diameter cast iron bar, there is sufficient material for holding and parting. \n\nThe machining sequence follows a logical progression from the largest diameter to the smallest, working from the free end (right) towards the chuck (left). \n1. **Facing** establishes the zero reference.\n2. **Rough Turning** brings the entire part to the maximum required diameter (\u00d860).\n3. **Step Turning** is used to create the main profile. We first reduce the bulk to \u00d845, then specifically create the \u00d830 neck. \n4. We then move to the front sections, reducing to \u00d835, then \u00d825, and finally \u00d820.\n5. The **Grooving** feature (\u00d815) is machined into the \u00d825 section to separate the front flange from the main shaft.\n6. **Chamfering** is performed at the specified transitions (Z=0, Z=45, Z=75) to meet drawing requirements.\n7. Finally, the part is **Parted Off** at the 130mm mark. \n\nTool speeds were selected based on typical cast iron machining parameters (conservative 400-800 RPM range) to ensure surface finish and tool life. Dependency checks confirm that larger diameters are turned before smaller ones to maintain structural rigidity during machining.",
+    "step_by_step_plan": "1. Secure the 65mm diameter cast iron bar in the CNC lathe chuck with at least 135mm protruding.\n2. Use the Facing tool at 800 RPM to clean the end face and set the Z-axis zero point.\n3. Use the Turning tool at 600 RPM to rough turn the outer diameter to 60mm for a length of 130mm.\n4. Use the Step Turning tool to reduce the diameter to 45mm from Z=0 to Z=120.\n5. Use the Step Turning tool at 700 RPM to turn the section between Z=85 and Z=120 down to 30mm diameter.\n6. Use the Step Turning tool at 700 RPM to turn the section from Z=0 to Z=75 down to 35mm diameter.\n7. Use the Step Turning tool at 800 RPM to turn the section from Z=0 to Z=45 down to 25mm diameter.\n8. Use the Step Turning tool at 800 RPM to turn the section from Z=10 to Z=45 down to 20mm diameter.\n9. Use the Turning tool at 400 RPM to create the \u00d815mm groove between Z=5 and Z=10.\n10. Use the Chamfering tool at 600 RPM to cut a 1mm x 45\u00b0 chamfer at Z=0, a 2mm x 45\u00b0 chamfer at Z=45, and a 1mm x 45\u00b0 chamfer at Z=75.\n11. Use the Turning/Parting tool at 400 RPM to cut the part to its final length of 130mm."
+}

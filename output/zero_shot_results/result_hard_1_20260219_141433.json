@@ -1,0 +1,42 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "600 RPM",
+            "description": "Face the front end of the \u00d865 mm cast iron bar to establish a clean Z-zero reference point and remove excess material from the 150 mm raw length."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Rough and finish turn the outer diameter of the bar from \u00d865 mm to \u00d860 mm for a total length of 135 mm from the front face."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform step turning to reduce the diameter from \u00d860 mm to \u00d840 mm. This cut starts from the front face and extends 105 mm deep (covering the taper, the two \u00d840 sections, and the groove area)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Turning Tool",
+            "tool_speed": "700 RPM",
+            "description": "Apply taper turning at the front of the part. The tool will move from \u00d820 mm at the face (Z0) to \u00d840 mm at a distance of 40 mm (Z-40)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Grooving Tool (10mm width)",
+            "tool_speed": "400 RPM",
+            "description": "Plunge the grooving tool at a distance of 70 mm from the front face (Z-70) to create a groove with a diameter of \u00d830 mm and a width of 10 mm."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Parting Tool",
+            "tool_speed": "300 RPM",
+            "description": "Cut the finished part from the remaining raw stock at the 135 mm mark (Z-135) to achieve the final part length."
+        }
+    ],
+    "reasoning": "The manufacturing strategy follows a 'large-to-small' diameter approach to maintain maximum workpiece rigidity during machining. After establishing a reference face, the entire part profile is roughed out to the maximum diameter (\u00d860). Then, the secondary diameter (\u00d840) is established. Specialized features like the taper and the internal groove are machined afterward because they require the base diameters to be set. Finally, the part is separated from the raw stock using a parting tool to ensure the total length matches the 135 mm requirement derived from the sum of the individual section lengths (30+25+10+30+40).",
+    "step_by_step_plan": "1. Secure the \u00d865 mm cast iron bar in the lathe chuck with approximately 145 mm protruding. 2. Mount the facing tool and face the end to set the Z-axis datum. 3. Use the turning tool to reduce the bar to \u00d860 mm for a length of 135 mm. 4. Continue with the turning tool to create a step of \u00d840 mm starting from the front face and ending at 105 mm from the face. 5. Adjust the tool path (or compound slide) to cut a taper from \u00d820 mm at the tip to \u00d840 mm over a 40 mm length. 6. Switch to a 10 mm wide grooving tool; position it 70 mm from the front face and feed in radially until the diameter reaches \u00d830 mm. 7. Finally, use the parting tool at 135 mm from the front face to cut through the bar and complete the part."
+}

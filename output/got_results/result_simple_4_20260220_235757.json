@@ -1,0 +1,48 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Mount the cylindrical cast iron bar in the lathe chuck with approximately 130mm protruding. Face the end of the bar to create a flat, square reference surface (Z=0)."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Rough turn the outer diameter from 65mm down to 60mm over a length of 120mm from the face. Follow with a finish pass to ensure the \u00d860 dimension is accurate."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "750 RPM",
+            "description": "Perform step turning to reduce the diameter from 60mm to 45mm. This cut starts from the face (Z=0) and extends 90mm deep (covering the 10mm, 50mm, and 30mm segments)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "900 RPM",
+            "description": "Perform step turning to reduce the diameter from 45mm to 30mm. This cut starts from the face (Z=0) and extends 60mm deep (covering the 10mm and 50mm segments)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Perform the final step turning to reduce the diameter from 30mm to 15mm. This cut starts from the face (Z=0) and extends 10mm deep."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "800 RPM",
+            "description": "Apply 0.5mm x 45-degree chamfers to the edges of each step (\u00d815, \u00d830, \u00d845, and \u00d860) to remove sharp burrs and improve handling safety."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Parting Tool",
+            "tool_speed": "500 RPM",
+            "description": "Cut the finished part from the remaining stock at a total length of 120mm from the front face."
+        }
+    ],
+    "reasoning": "The manufacturing process is designed using a Graph of Thought approach to identify dependencies and optimize tool paths. \n\n1. **Feature Identification**: The part is a multi-step shaft with four distinct diameters: \u00d860 (30mm length), \u00d845 (30mm length), \u00d830 (50mm length), and \u00d815 (10mm length). The total finished length is 120mm. \n\n2. **Dependency Analysis**: \n   - **Facing** is the root node; it must occur first to establish the Z-axis zero reference.\n   - **Rough Turning** (\u00d865 to \u00d860) is a prerequisite for all subsequent step turning because the largest finished diameter is 60mm.\n   - **Step Turning** follows a hierarchical dependency: \u00d845 depends on \u00d860, \u00d830 depends on \u00d845, and \u00d815 depends on \u00d830. This 'telescoping' approach ensures maximum workpiece rigidity by removing material from the end towards the chuck and maintaining the largest possible cross-section for as long as possible.\n   - **Chamfering** is dependent on the completion of all turning steps.\n   - **Parting** is the terminal node, dependent on all geometry being finalized.\n\n3. **Optimization**: \n   - To minimize tool changes, a single right-hand turning tool is selected for facing, roughing, and all step turning operations.\n   - The sequence is ordered from the largest diameter to the smallest diameter in terms of length (turning the longest section first) to maintain structural integrity during heavy cuts.\n   - RPM is increased as the diameter decreases to maintain a consistent cutting speed (Surface Meters per Minute), which is critical for cast iron to prevent chipping and ensure surface finish.",
+    "step_by_step_plan": "1. Preparation: Secure the 65mm diameter cast iron bar in a 3-jaw chuck, ensuring at least 130mm of material extends beyond the jaws. Use a dial indicator to check for runout.\n2. Facing: Using a facing tool at 800 RPM, take a light cut across the end of the bar to establish a clean reference face. Set this as Z=0 in the CNC controller.\n3. Primary Diameter: Set the lathe to 600 RPM. Turn the entire 120mm length of the exposed bar to a diameter of 60mm. This removes the cast skin and establishes the first step.\n4. Second Step: Increase speed to 750 RPM. Starting from Z=0, turn the bar down to 45mm diameter for a length of 90mm. This leaves the 30mm section at the back at \u00d860.\n5. Third Step: Increase speed to 900 RPM. Starting from Z=0, turn the bar down to 30mm diameter for a length of 60mm. This leaves the previous section at \u00d845.\n6. Fourth Step: Increase speed to 1200 RPM. Starting from Z=0, turn the bar down to 15mm diameter for a length of 10mm. This completes the step profile.\n7. Finishing: Use a chamfering tool or the side of the turning tool to create small 45-degree breaks on all outer edges. \n8. Inspection: Verify the lengths (10, 50, 30, 30) and diameters (15, 30, 45, 60) using a vernier caliper or micrometer.\n9. Parting: Use a parting tool at a lower speed (500 RPM) to cut the part at exactly 120mm from the face. Use coolant to prevent heat buildup and tool breakage in the cast iron."
+}

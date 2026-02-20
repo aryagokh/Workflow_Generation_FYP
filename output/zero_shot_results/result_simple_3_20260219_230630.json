@@ -1,0 +1,36 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the \u00d865mm cast iron bar to establish a clean, flat reference surface for Z-axis zeroing."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Perform rough and finish turning to reduce the outer diameter of the stock from 65mm to 60mm over a total length of 130mm."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Step turn the second section to a diameter of 40mm. This cut starts from the front face and extends 100mm back (covering the 40mm and 60mm segments)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Step turn the final section to a diameter of 25mm. This cut starts from the front face and extends 40mm back."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Parting Tool",
+            "tool_speed": "500 RPM",
+            "description": "Part off the finished component from the remaining stock at a distance of 130mm from the front face."
+        }
+    ],
+    "reasoning": "The part is a multi-stepped shaft with three distinct diameters (\u00d860, \u00d840, \u00d825) and a total length of 130mm. Starting with a \u00d865mm x 150mm cast iron bar, the sequence must prioritize rigidity by turning the largest diameter first. The process begins with facing to establish a datum. Then, a series of step turning operations reduce the stock to the required diameters. Analysis shows no taper turning or grooving is required as all transitions are perpendicular steps. Finally, the part is separated from the raw stock using a parting tool at the specified total length.",
+    "step_by_step_plan": "1. Mount the \u00d865mm x 150mm cast iron bar into the CNC lathe chuck, ensuring approximately 135-140mm of material protrudes. 2. Use a facing tool to clean the end face and set the Z-zero coordinate. 3. Use a turning tool to reduce the entire part length (130mm) to \u00d860mm. 4. Use the turning tool to create the middle step by turning a 100mm length (from the right end) to \u00d840mm. 5. Use the turning tool to create the smallest step by turning a 40mm length (from the right end) to \u00d825mm. 6. Verify all diameters and lengths with a caliper. 7. Use a parting tool to cut the part at exactly 130mm from the front face, completing the manufacture."
+}

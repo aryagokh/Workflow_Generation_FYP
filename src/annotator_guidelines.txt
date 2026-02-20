@@ -1,0 +1,91 @@
+CNC Workflow Evaluation — Annotator Guide
+==========================================
+
+Evaluator: ___________________  Date: ___________________
+Image ID: ___________________  Technique: _______________ (Zero-Shot / COT / Guided COT / TOT / GOT)
+
+You will evaluate an AI-generated CNC machining workflow from an engineering drawing.
+Score each metric below and compute the final WQI.
+
+---
+
+METRIC 1 — Workflow Feasibility Score (WFS)
+--------------------------------------------
+Find steps where an operation assumes something not yet created.
+Common violations: turning before facing, smaller diameter before larger, chamfering a feature not yet turned.
+
+  WFS = 1 - (Violations / Total Steps)
+
+Example: 2 violations in 8 steps → WFS = 1 - (2/8) = 0.75
+
+Violations found:
+  Step ___ : _______________________________
+  Step ___ : _______________________________
+  Step ___ : _______________________________
+
+V = ___   T = ___   WFS = ___
+
+
+METRIC 2 — Feature Recall Score (FRS)
+--------------------------------------
+List all features in the drawing (diameters, lengths, holes, tapers, chamfers).
+Check how many the workflow actually addresses.
+
+  FRS = Features Addressed / Total Features
+
+Example: 6 of 8 features addressed → FRS = 0.75
+
+Features in drawing: ___ (total)
+Features missed: _______________________________
+FRS = ___ / ___ = ___
+
+
+METRIC 3 — Reasoning-Output Alignment Score (ROAS)
+----------------------------------------------------
+Only for COT, Guided COT, TOT, GOT. Skip for Zero-Shot (mark N/A).
+For each step, check if the reasoning field gives a specific, concrete justification.
+Vague statements like "turning as needed" do NOT count.
+
+  ROAS = Justified Steps / Total Steps
+
+Example: 6 of 7 steps justified → ROAS = 0.857
+
+Justified steps: ___   Total steps: ___   ROAS = ___  (or N/A)
+
+
+METRIC 4 — Operational Redundancy Rate (ORR)
+---------------------------------------------
+Mark steps that are repeated or remove no material.
+
+  ORR = Redundant Steps / Total Steps   (lower is better)
+
+Example: 2 redundant in 10 steps → ORR = 0.20
+
+Redundant steps:
+  Step ___ : _______________________________
+  Step ___ : _______________________________
+
+R = ___   T = ___   ORR = ___   (1 - ORR) = ___
+
+
+FINAL SCORE — Workflow Quality Index (WQI)
+-------------------------------------------
+With reasoning (COT / Guided COT / TOT / GOT):
+  WQI = 0.35(WFS) + 0.30(FRS) + 0.20(ROAS) + 0.15(1-ORR)
+
+Without reasoning (Zero-Shot):
+  WQI = 0.41(WFS) + 0.35(FRS) + 0.24(1-ORR)
+
+WQI = ___
+
+---
+
+Notes / Observations:
+________________________________________________________________
+________________________________________________________________
+
+Guidelines:
+- Evaluate each workflow independently, do not compare across techniques while scoring.
+- If a step is ambiguous but feasible, do not mark as violation.
+- Ignore minor RPM inaccuracies unless grossly wrong.
+- When unsure, note it in observations.

@@ -1,0 +1,54 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "500 RPM",
+            "description": "Face the end of the 65mm diameter cast iron bar to establish a zero reference point and ensure the face is flat. Reduce the total length from 150mm to approximately 147mm (leaving 2mm for the final parting operation)."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform rough turning on the outer diameter of the bar, reducing it from 65mm to the base diameter of 60mm over the entire 145mm length of the part."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform step turning to reduce the diameter from 60mm to 40mm starting from 45mm from the base, extending to the end of the part (total length of 100mm)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform a second step turning operation to reduce the diameter from 40mm to 20mm starting from 90mm from the base, extending to the end of the part (total length of 55mm)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Taper Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Machine the first taper connecting the 60mm diameter section to the 40mm diameter section. The taper starts at Z=45mm and ends at Z=70mm (length of 25mm)."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Taper Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Machine the second taper connecting the 40mm diameter section to the 20mm diameter section. The taper starts at Z=90mm and ends at Z=115mm (length of 25mm)."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Taper Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Machine the final taper at the tip, reducing the diameter from 20mm to 5mm. The taper starts at Z=130mm and ends at Z=145mm (length of 15mm)."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Parting Tool",
+            "tool_speed": "400 RPM",
+            "description": "Cut the finished part from the remaining stock at the 145mm mark from the reference face."
+        }
+    ],
+    "reasoning": "The manufacturing process is planned using a Graph of Thought approach to ensure structural integrity and machining efficiency. \n\n1. **Feature Identification**: The part consists of a 60mm base, three cylindrical steps (60mm, 40mm, 20mm), and three tapered transitions (60-40mm, 40-20mm, and 20-5mm). The total length is 145mm.\n\n2. **Dependency Analysis**: \n   - Facing is the root node; it establishes the Z-axis datum for all subsequent measurements.\n   - Turning the stock to the maximum required diameter (60mm) is a prerequisite for all other features.\n   - Step turning must follow a 'large-to-small' diameter sequence (60 -> 40 -> 20) to maintain workpiece rigidity and prevent vibration (chatter).\n   - Tapering is dependent on the existence of the relevant step diameters. For example, the 60-40 taper requires the 40mm step to be roughed out first.\n\n3. **Optimization**: \n   - Instead of individual roughing passes for every taper, we perform bulk material removal using step turning. This allows the taper turning tool to perform a single finishing pass, improving surface finish and tool life.\n   - The sequence is linearized by prioritizing diameter reduction from the base towards the tip, ensuring the part remains supported by the chuck as long as possible.\n\n4. **Final Sequence Extraction**: The graph is traversed starting from the reference face, moving to bulk diameter reduction, then specific feature shaping (tapers), and finally parting the finished component.",
+    "step_by_step_plan": "1. Secure the 65mm x 150mm cast iron bar in the CNC lathe chuck, ensuring at least 150mm is protruding.\n2. Load the Facing Tool and set the spindle to 500 RPM. Face the end of the bar to create a clean reference surface (Z=0).\n3. Switch to the Turning Tool. Set speed to 600 RPM. Turn the outer diameter down to 60mm for a length of 145mm.\n4. Using the Step Turning Tool at 600 RPM, reduce the diameter to 40mm starting from 45mm from the face to the end of the bar.\n5. Continue with Step Turning to reduce the diameter to 20mm starting from 90mm from the face to the end of the bar.\n6. Load the Taper Turning Tool and increase speed to 800 RPM for a better finish. Execute the first taper from Z=45 to Z=70, transitioning from 60mm to 40mm.\n7. Execute the second taper from Z=90 to Z=115, transitioning from 40mm to 20mm.\n8. Execute the final taper at the tip from Z=130 to Z=145, transitioning from 20mm down to 5mm.\n9. Perform a final inspection of dimensions while the part is still mounted.\n10. Load the Parting Tool, reduce speed to 400 RPM, and cut the part at the Z=145mm position to separate it from the raw stock."
+}

@@ -1,0 +1,42 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Face the front end of the 65 mm diameter cast iron bar to create a flat reference surface and establish the Z-zero point."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform rough turning to reduce the stock diameter from 65 mm to 40 mm over a length of 95 mm from the faced end."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Machine the primary diameters: turn the section from 0 to 87 mm to a diameter of 35 mm (leaving the 5 mm flange at 40 mm), and turn the front 2 mm tip to a diameter of 5 mm."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Turning Tool",
+            "tool_speed": "900 RPM",
+            "description": "Execute taper turning in two stages: first, a 40 mm long taper from diameter 35 mm to 20 mm; second, a 10 mm long taper from diameter 20 mm to 5 mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "700 RPM",
+            "description": "Machine the 5 mm wide neck section between the flange and the main body to a diameter of 25 mm."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Turning Tool",
+            "tool_speed": "400 RPM",
+            "description": "Perform the final parting operation at a length of 92 mm from the front face to separate the finished part from the raw stock."
+        }
+    ],
+    "reasoning": "The manufacturing process is designed for a cast iron part with a maximum diameter of 40 mm and a total length of 92 mm, starting from a 65 mm x 150 mm bar. The sequence begins with facing to establish a datum. Rough turning is then used to remove bulk material down to the maximum part diameter (40 mm). Step turning is utilized to define the distinct cylindrical sections: the 40 mm flange, the 35 mm body, and the 5 mm tip. Taper turning is critical for the two conical transitions (35 to 20 mm and 20 to 5 mm). A specific step turning operation (or grooving) creates the 25 mm neck behind the flange. Finally, the part is cut to its total length of 92 mm. Speeds are selected based on typical cast iron machining properties, balancing material removal rates with tool life and surface finish requirements.",
+    "step_by_step_plan": "1. Secure the 65 mm diameter cast iron bar in the lathe chuck, ensuring at least 110 mm of material extends beyond the jaws.\n2. Load the Facing Tool and face the end of the bar at 1000 RPM to set the Z-axis zero.\n3. Use a Turning Tool at 600 RPM to rough turn the outer diameter to 40 mm for a length of 95 mm.\n4. Use a Step Turning Tool at 800 RPM to turn the diameter from the front to the 87 mm mark down to 35 mm, effectively creating the 5 mm thick flange at the back.\n5. Continue with the Step Turning Tool to turn the front-most 2 mm of the part to a diameter of 5 mm.\n6. Switch to a Turning Tool at 900 RPM to machine the first taper starting at Z=52 mm (35 mm dia) and ending at Z=12 mm (20 mm dia).\n7. Machine the second taper from Z=12 mm (20 mm dia) to Z=2 mm (5 mm dia).\n8. Use a Step Turning tool (or grooving tool) at 700 RPM to cut the neck between Z=82 mm and Z=87 mm down to a diameter of 25 mm.\n9. Verify all dimensions against the engineering drawing.\n10. Use a parting tool (Turning Tool) at 400 RPM to cut the finished part at the 92 mm mark from the front face."
+}

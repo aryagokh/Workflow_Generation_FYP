@@ -1,0 +1,42 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Mount the 65mm diameter bar in the chuck with approximately 140mm protruding. Face the front end of the stock to create a flat, square reference surface (Z=0)."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "700 RPM",
+            "description": "Perform a rough turning operation to reduce the outer diameter of the raw stock from 65mm to 60mm over a length of 135mm from the faced end."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Reduce the diameter from 60mm to 40mm starting from the front face (Z0) to a depth of 100mm (covering the 40mm and 60mm length sections)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Reduce the diameter from 40mm to 25mm starting from the front face (Z0) to a depth of 40mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Apply a 1mm x 45-degree chamfer to the leading edges of the 25mm and 40mm diameter sections to remove sharp burrs."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Flip the part in the chuck, clamping on the 40mm or 60mm diameter using soft jaws. Face the back end to achieve the final total part length of 130mm (30+60+40)."
+        }
+    ],
+    "reasoning": "The manufacturing process begins by analyzing the raw stock (65mm x 150mm) against the final part dimensions (max diameter 60mm, total length 130mm). The part is a stepped shaft with three distinct diameters: 60mm, 40mm, and 25mm. \n\n1. **Setup and Facing**: We start by facing the stock to establish a zero reference point. Since the stock is 20mm longer than the final part, we have ample material for clamping and facing.\n2. **Outer Diameter Preparation**: The raw stock is 65mm, but the largest part diameter is 60mm. A general turning pass is required to bring the entire usable length to 60mm.\n3. **Step Turning Logic**: To maintain maximum rigidity, we work from the largest diameter to the smallest. First, we turn the 40mm diameter section (which includes the length of the 25mm section). Then, we turn the 25mm section. This 'telescoping' approach prevents the part from flexing during heavy cuts.\n4. **Finishing**: Chamfering is included to ensure the part is safe to handle and meets standard engineering practices. \n5. **Final Length**: Because the stock is 150mm and the part is 130mm, a final facing operation after flipping the part is the most accurate way to achieve the total length dimension while ensuring both ends are square.",
+    "step_by_step_plan": "1. Secure the cast iron bar in the lathe chuck, ensuring at least 20mm is held within the jaws for stability.\n2. Use the Facing Tool at 800 RPM to clean the front face. Set this as Z=0.\n3. Use the Turning Tool to reduce the 65mm stock to 60mm diameter. Cut to a length of 135mm to ensure the 60mm section (30mm long) is fully formed.\n4. Switch to Step Turning. Reduce the diameter to 40mm for a length of 100mm from the face. This creates the middle step and the base for the smallest step.\n5. Continue Step Turning to reduce the first 40mm of the part to a diameter of 25mm.\n6. Use the Chamfering Tool to add a small break-edge on the 25mm and 40mm steps.\n7. Stop the machine, unclamp the part, and flip it. Clamp the part on the 60mm diameter section.\n8. Face the remaining 20mm of excess stock from the back end until the total length of the part measures exactly 130mm."
+}

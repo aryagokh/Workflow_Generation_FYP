@@ -1,0 +1,60 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool (Carbide)",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the raw stock to create a flat reference surface (Z=0)."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Rough turn the outer diameter of the bar from 65mm to 60mm for a length of 116mm."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Finishing Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Turn the smallest step to a diameter of 10mm for a length of 10mm (Z0 to Z-10)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Finishing Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Turn the second step to a diameter of 20mm for a length of 15mm (Z-10 to Z-25)."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Finishing Turning Tool",
+            "tool_speed": "900 RPM",
+            "description": "Turn the third step to a diameter of 30mm for a length of 25mm (Z-25 to Z-50)."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Finishing Turning Tool",
+            "tool_speed": "850 RPM",
+            "description": "Perform taper turning from diameter 30mm at Z-50 to diameter 45mm at Z-75."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Finishing Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Turn the next step to a diameter of 45mm for a length of 15mm (Z-75 to Z-90)."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "700 RPM",
+            "description": "Apply a 1mm x 45-degree chamfer at the shoulder of the 30mm diameter section (Z-25)."
+        },
+        {
+            "step_number": 9,
+            "tool_name": "Parting Tool",
+            "tool_speed": "400 RPM",
+            "description": "Part off the finished component at a total length of 115mm from the front face."
+        }
+    ],
+    "reasoning": "The part is a multi-stepped shaft with a tapered section and a chamfer, made from cast iron. The raw stock is 65 mm in diameter and 150 mm in length, while the finished part has a maximum diameter of 60 mm and a total length of 115 mm. The machining strategy involves securing the stock in a chuck with enough clearance for parting off. We will first face the part to establish a zero reference, then perform a rough outer diameter (OD) turn to the maximum part diameter (60 mm). Following this, we will machine the steps from the smallest diameter (10 mm) at the tailstock end towards the chuck, including the taper and the specific chamfer. Finally, the part will be cut to length using a parting tool.",
+    "step_by_step_plan": "1. Secure the 65mm x 150mm cast iron bar in a 3-jaw CNC lathe chuck, ensuring at least 30mm is gripped for stability. 2. Use a facing tool to clean the front face and set the Z-axis zero point. 3. Perform a rough turning operation to reduce the outer diameter from 65mm to 60mm over a length of 116mm (allowing 1mm for parting). 4. Use a turning tool to machine the first step to 10mm diameter for a length of 10mm from the face. 5. Machine the second step to 20mm diameter for an additional 15mm length (total 25mm from face). 6. Machine the third step to 30mm diameter for an additional 25mm length (total 50mm from face). 7. Execute a taper turning operation from 30mm diameter to 45mm diameter over a 25mm length (total 75mm from face). 8. Machine the next step to 45mm diameter for an additional 15mm length (total 90mm from face). 9. Apply a 1mm chamfer at the shoulder transition between the 30mm and 20mm diameters as specified. 10. Use a parting tool to cut the finished part at a total length of 115mm from the front face."
+}

@@ -1,0 +1,42 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the 65 mm diameter cast iron bar to establish the Z=0 reference plane and ensure a flat surface for subsequent operations."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Rough turn the outer diameter of the bar from 65 mm down to 42 mm for a length of approximately 95 mm to remove bulk material efficiently."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Finish turn the main cylindrical diameters, establishing the \u00d840 mm flange at the rear, the \u00d835 mm central body, and the \u00d85 mm tip at the front."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Taper Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Machine the two tapered sections: a 10 mm long taper from \u00d85 mm to \u00d820 mm, followed by a 40 mm long taper from \u00d820 mm to \u00d835 mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Grooving Tool",
+            "tool_speed": "400 RPM",
+            "description": "Use a 5 mm wide grooving tool to plunge-cut the \u00d825 mm groove located 5 mm from the rear face of the part, between the flange and the cylinder."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Parting Tool",
+            "tool_speed": "400 RPM",
+            "description": "Part off the finished workpiece from the remaining stock at a total length of 92 mm from the front face."
+        }
+    ],
+    "reasoning": "The part is a multi-featured shaft made of cast iron, requiring a sequence of turning operations to achieve the final geometry. The total length of the part is 92 mm (5mm flange + 5mm groove + 30mm cylinder + 40mm taper + 10mm taper + 2mm tip). Given the raw stock is \u00d865 mm, significant roughing is required to reach the maximum part diameter of \u00d840 mm. The workflow follows a logical sequence: facing for a datum, roughing for bulk removal, finish turning of steps, taper turning for the conical sections, grooving for the undercut, and finally parting off. Cast iron is machined at moderate speeds to optimize tool life and surface finish.",
+    "step_by_step_plan": "1. Mount the \u00d865 mm x 150 mm cast iron bar in a 3-jaw chuck with approximately 110 mm of material extending beyond the jaws.\n2. Load the Facing Tool and face the front of the stock to set the Z-zero coordinate.\n3. Use the Turning Tool to rough turn the diameter to \u00d842 mm for a length of 95 mm from the face.\n4. Perform finish turning to create the \u00d840 mm flange (from Z-87 to Z-92), the \u00d835 mm cylinder (from Z-52 to Z-82), and the \u00d85 mm tip (from Z0 to Z-2).\n5. Use the Taper Turning function to machine the taper from \u00d85 to \u00d820 over the length from Z-2 to Z-12.\n6. Machine the second taper from \u00d820 to \u00d835 over the length from Z-12 to Z-52.\n7. Change to a 5 mm wide Grooving Tool. Position the tool at Z-82 and plunge to a diameter of \u00d825 mm to create the groove.\n8. Verify all dimensions against the engineering drawing.\n9. Use a Parting Tool to cut the part at Z-92, separating the finished component from the raw stock."
+}

@@ -1,0 +1,44 @@
+{  
+3 approaches:{
+1. COT Based with context agentic AI
+2. Normal context given agentic ai (same but cot examples removed)
+3. maybe one more if time permits or with out anything just pure llm call or zero-shot cot ("Lets think step by step")
+4: if very much time, curation and fine tuning
+}
+Then a simple post processor
+all this on simple drawings like turning facing drilling 
+
+Evaluation metric{
+"Human expert based reasoning correctness",
+"Code correctness / no of human tweaks needed for correct approach", etc 
+}
+}
+
+Then a strong paper
+
+
+evaluation_framework = {
+    'human_expert_reasoning': {
+        'metric': 'Expert evaluates the reasoning quality (1-5 scale)',
+        'evaluator': 'CNC instructor + experienced machinist', 
+        'sample_size': '100% for reasoning, 30% for detailed review'
+    },
+    
+    'code_correctness': {
+        'metric': 'Number of human tweaks needed to make code runnable',
+        'categories': ['syntax_errors', 'safety_issues', 'logic_errors'],
+        'scoring': '0 tweaks = perfect, 1-3 = good, 4+ = poor'
+    },
+    
+    'post_processor_compatibility': {
+        'metric': 'Does processed code run in simulator without errors?',
+        'test': 'Run through Haas simulator or CAMotics'
+    }
+}
+
+additional_metrics = {
+    'operation_completeness': 'All required operations present?',
+    'sequence_logic': 'Logical machining order?',
+    'safety_compliance': 'Proper retracts and safety moves?',
+    'educational_appropriateness': 'Suitable for 2nd year students?'
+}

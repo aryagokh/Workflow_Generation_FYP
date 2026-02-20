@@ -1,0 +1,42 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing",
+            "tool_speed": "800 RPM",
+            "description": "Face the right end of the cylindrical bar to create a flat reference surface and establish the Z=0 datum for all subsequent measurements."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning",
+            "tool_speed": "600 RPM",
+            "description": "Perform a rough and finish turning operation to reduce the raw stock diameter from 65 mm to 60 mm over a length of 135 mm from the face."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning",
+            "tool_speed": "750 RPM",
+            "description": "Reduce the diameter from 60 mm to 40 mm starting from Z=0 to a depth of 100 mm. This creates the middle section and leaves the 60 mm diameter section with a length of 30 mm at the rear."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning",
+            "tool_speed": "1000 RPM",
+            "description": "Reduce the diameter from 40 mm to 25 mm starting from Z=0 to a depth of 40 mm. This creates the smallest diameter section and leaves the 40 mm section with a length of 60 mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Chamfering",
+            "tool_speed": "600 RPM",
+            "description": "Apply 1 mm x 45-degree chamfers to the external edges of the 25 mm, 40 mm, and 60 mm steps to remove sharp burrs and improve handling safety."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Facing",
+            "tool_speed": "800 RPM",
+            "description": "Perform a final facing/parting cut at Z=-130 mm to separate the finished part from the remaining stock and achieve the total required length of 130 mm."
+        }
+    ],
+    "reasoning": "The manufacturing process for this stepped cast iron shaft is planned using a dependency-based Graph of Thought approach. The part consists of three distinct cylindrical sections: \u00d860 mm (30 mm length), \u00d840 mm (60 mm length), and \u00d825 mm (40 mm length), resulting in a total length of 130 mm. The raw stock provided is a \u00d865 mm x 150 mm bar.\n\n**Feature Identification & Dependency Analysis:**\n- **Node 1: Facing (Right End).** This is the root node. It establishes the Z-axis zero reference necessary for all longitudinal dimensions.\n- **Node 2: Turning (OD 60 mm).** This depends on the facing operation. The entire stock is reduced to the maximum finished diameter (60 mm) to ensure concentricity and provide a base for smaller steps.\n- **Node 3: Step Turning (OD 40 mm).** This depends on the 60 mm diameter being established. It reduces the material for the combined length of the two smaller sections (60 mm + 40 mm = 100 mm).\n- **Node 4: Step Turning (OD 25 mm).** This depends on the 40 mm section. It is the final diameter reduction for the front-most section (40 mm length).\n- **Node 5: Chamfering.** This depends on the completion of all turning steps to ensure all sharp edges are deburred.\n- **Node 6: Facing (Left End/Parting).** This depends on all previous operations. It sets the final part length to 130 mm and separates the part from the chuck-held stock.\n\n**Optimization & Feature Analysis:**\n- **Progressive Reduction:** Instead of turning each section directly from 65 mm, the plan uses a nested reduction (65 -> 60 -> 40 -> 25). This minimizes tool pressure and heat generation, which is critical for cast iron.\n- **Feature Check:** Analysis of the drawing confirms the presence of three steps. Tapering and specialized grooving are not required as the geometry consists only of orthogonal steps.\n- **Linear Extraction:** The final sequence follows the dependency chain: Face -> Turn OD -> Step Turn 1 -> Step Turn 2 -> Chamfer -> Final Face.",
+    "step_by_step_plan": "1. **Workpiece Setup**: Secure the \u00d865 mm x 150 mm cast iron bar in the 3-jaw chuck of the CNC lathe. Ensure the bar is centered and at least 135 mm of the bar extends beyond the chuck jaws to allow for tool clearance.\n2. **Establish Reference**: Select the 'Facing' tool. Set the spindle speed to 800 RPM. Move the tool across the end of the bar to create a smooth, flat surface. Set this position as Z=0 in the CNC controller.\n3. **Rough/Finish OD**: Select the 'Turning' tool. Set the speed to 600 RPM. Perform a longitudinal cut to reduce the diameter from 65 mm to 60 mm. This cut should extend 135 mm from the Z=0 face to provide a margin for the final cut-off.\n4. **Machining the Second Step**: Select the 'Step Turning' tool. Set the speed to 750 RPM. Starting from the Z=0 face, reduce the diameter from 60 mm to 40 mm for a length of 100 mm. This creates the \u00d840 mm section and leaves the \u00d860 mm section at the rear (from Z-100 to Z-130).\n5. **Machining the Third Step**: Use the 'Step Turning' tool. Increase the spindle speed to 1000 RPM. Starting from the Z=0 face, reduce the diameter from 40 mm to 25 mm for a length of 40 mm. This creates the \u00d825 mm section and leaves the \u00d840 mm section in the middle (from Z-40 to Z-100).\n6. **Deburring**: Select the 'Chamfering' tool. At 600 RPM, apply a small 1 mm x 45\u00b0 chamfer to the front edge (Z=0) and the two step shoulders (Z=-40 and Z=-100) to ensure the part is safe to handle and free of sharp burrs.\n7. **Final Length Cut**: Select the 'Facing' tool. Set the speed to 800 RPM. Move the tool to Z=-130 mm and perform a deep cut to face the back of the part and separate it from the remaining stock. Verify the final part length of 130 mm and diameters of 60 mm, 40 mm, and 25 mm using a micrometer."
+}

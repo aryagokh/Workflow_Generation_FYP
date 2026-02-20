@@ -1,0 +1,66 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Face the front end of the 65mm diameter cast iron bar to establish a clean Z=0 reference point."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Turn the outer diameter of the bar from 65mm down to 60mm for a length of approximately 130mm to accommodate the total part length."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Perform step turning to reduce the diameter to 50mm from the face (Z=0) to a depth of 90mm."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Perform step turning to reduce the diameter to 35mm from the face (Z=0) to a depth of 65mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1100 RPM",
+            "description": "Perform step turning to reduce the diameter to 25mm from the face (Z=0) to a depth of 20mm."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Perform step turning to reduce the diameter to 10mm from the face (Z=0) to a depth of 15mm."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Grooving Tool",
+            "tool_speed": "600 RPM",
+            "description": "Cut a groove to a diameter of 40mm between Z=80mm and Z=90mm from the front face."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Grooving Tool",
+            "tool_speed": "600 RPM",
+            "description": "Cut a groove to a diameter of 15mm between Z=20mm and Z=25mm from the front face."
+        },
+        {
+            "step_number": 9,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "800 RPM",
+            "description": "Apply a 2mm x 45-degree chamfer at the shoulder of the 50mm diameter section (at Z=65mm) and a 1mm x 45-degree chamfer at the shoulder of the 25mm diameter section (at Z=15mm)."
+        },
+        {
+            "step_number": 10,
+            "tool_name": "Parting Tool",
+            "tool_speed": "500 RPM",
+            "description": "Part off the finished component at a total length of 125mm from the front face."
+        }
+    ],
+    "reasoning": "The manufacturing process begins by analyzing the dimensions and features of the part. The total length of the part is 125mm (35+10+15+40+5+5+15), which fits within the 150mm raw stock. The maximum diameter is 60mm, requiring an initial reduction from the 65mm stock. \n\nThe sequence is designed to maintain maximum workpiece rigidity by turning larger diameters first and moving towards the smaller diameters at the free end. \n1. Facing establishes the datum.\n2. Turning the 60mm OD sets the base for the largest section.\n3. Sequential step turning from the front face reduces diameters in stages (50mm, 35mm, 25mm, 10mm). This approach is more stable than turning each section individually.\n4. Grooving is performed to create the recessed diameters (40mm and 15mm) that cannot be reached by standard turning tools without removing excess material.\n5. Chamfering is applied to the specified edges for deburring and assembly ease.\n6. Finally, parting off separates the finished part from the remaining stock held in the chuck.",
+    "step_by_step_plan": "1. Secure the 65mm x 150mm cast iron bar in the CNC lathe chuck with at least 30mm of clearance from the jaws.\n2. Load the Facing Tool and face the end of the bar to create a reference plane at Z=0.\n3. Use the Rough Turning Tool to reduce the entire exposed length to 60mm diameter.\n4. Program the Step Turning Tool to reduce the diameter to 50mm for a length of 90mm from the face.\n5. Further reduce the diameter to 35mm for a length of 65mm from the face.\n6. Reduce the diameter to 25mm for a length of 20mm from the face.\n7. Reduce the final front section to 10mm diameter for a length of 15mm.\n8. Switch to a Grooving Tool. Create the 10mm wide groove (Diameter 40mm) starting at 80mm from the face. Then, create the 5mm wide groove (Diameter 15mm) starting at 20mm from the face.\n9. Use a Chamfering Tool to add a 2mm chamfer on the edge of the 50mm diameter section and a 1mm chamfer on the edge of the 25mm diameter section.\n10. Use a Parting Tool to cut the part at exactly 125mm from the front face, ensuring a smooth finish on the back end."
+}

@@ -1,0 +1,48 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool (Right Hand)",
+            "tool_speed": "600 RPM",
+            "description": "Face the front end of the 65mm diameter cast iron bar to establish a clean Z=0 reference plane."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Rough turn the outer diameter from 65mm down to 61mm for a total length of 130mm to prepare for finishing."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Perform step turning to create the primary diameters: Turn \u00d810mm for 15mm length (Z0 to Z-15), \u00d825mm for 5mm length (Z-15 to Z-20), \u00d835mm for 45mm length (Z-20 to Z-65), and \u00d850mm for 25mm length (Z-65 to Z-90)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Grooving Tool (5mm width)",
+            "tool_speed": "400 RPM",
+            "description": "Machine the recessed sections: Create the \u00d815mm groove between Z-20 and Z-25, and the \u00d840mm groove between Z-80 and Z-90."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Finishing Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Perform a finishing pass over the entire profile to achieve final dimensions (\u00d810, \u00d825, \u00d815, \u00d835, \u00d850, \u00d840, \u00d860) and required surface finish."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Apply a 1mm x 45\u00b0 chamfer on the front edge of the \u00d825mm section and a 2mm x 45\u00b0 chamfer on the front edge of the \u00d850mm section."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Parting Tool",
+            "tool_speed": "300 RPM",
+            "description": "Cut the finished part from the remaining stock at a total length of 125mm (Z-125)."
+        }
+    ],
+    "reasoning": "The manufacturing process is designed for a CNC lathe using a solid cast iron bar. The strategy begins with facing to establish a datum. Roughing passes reduce the bulk material to near-net shape, following the stepped profile from the smallest diameter to the largest to maintain part rigidity. Specific grooving operations are necessary for the \u00d815 and \u00d840 recessed necks because standard turning tools may not reach these internal corners effectively. Finishing passes ensure dimensional accuracy and surface quality. Chamfering is performed before parting off to ensure the edges are deburred and meet drawing specifications. The total length of 125mm fits within the 150mm stock, allowing 25mm for chuck clamping and parting tool width.",
+    "step_by_step_plan": "1. Secure the \u00d865mm x 150mm cast iron bar in the lathe chuck with approximately 135mm protruding.\n2. Load the Facing Tool and face the end surface to set Z=0.\n3. Use the Roughing Tool to reduce the stock diameter to \u00d861mm from Z0 to Z-130.\n4. Continue with the Roughing Tool to step-turn the profile: \u00d810mm (length 15mm), \u00d825mm (length 5mm), \u00d835mm (length 45mm), \u00d850mm (length 25mm), and \u00d860mm (remaining length).\n5. Switch to a 5mm Grooving Tool. Machine the \u00d815mm neck at Z-20 to Z-25. Then machine the \u00d840mm neck at Z-80 to Z-90.\n6. Use the Finishing Tool to trace the entire profile for final tolerance control.\n7. Apply the 1mm chamfer on the \u00d825 shoulder and the 2mm chamfer on the \u00d850 shoulder using the finishing tool or a dedicated chamfer tool.\n8. Verify all dimensions against the engineering drawing.\n9. Use the Parting Tool at Z-125 to separate the finished component from the raw stock, ensuring a constant feed rate to prevent tool breakage in the cast iron."
+}

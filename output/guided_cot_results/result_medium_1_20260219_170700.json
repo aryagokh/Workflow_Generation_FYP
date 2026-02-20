@@ -1,0 +1,54 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "800 RPM",
+            "description": "Mount the 65mm diameter cast iron bar in the CNC chuck with approximately 145mm protruding. Face the front end of the bar to establish a zero reference point (Z0) and ensure a flat surface."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform rough turning to reduce the outer diameter from 65mm to 60mm over a length of 135mm from the face."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform step turning to reduce the diameter from 60mm to 55mm for a length of 100mm (from Z0 to Z-100), leaving the 35mm long section at 60mm diameter at the back."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Turning Tool",
+            "tool_speed": "700 RPM",
+            "description": "Perform step turning to reduce the front 50mm of the part (from Z0 to Z-50) to a diameter of 35mm."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Turning Tool / Grooving Tool",
+            "tool_speed": "800 RPM",
+            "description": "Machine the neck section by reducing the diameter from 35mm to 30mm starting 10mm from the face and extending for 40mm (from Z-10 to Z-50). This creates the 10mm long end cap of 35mm diameter."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Grooving Tool",
+            "tool_speed": "400 RPM",
+            "description": "Cut a groove to create the 45mm diameter section. The groove should be 10mm wide, located between the 60mm and 55mm diameter sections (from Z-90 to Z-100)."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "800 RPM",
+            "description": "Apply a 2mm x 45-degree chamfer to the front edge of the 35mm diameter section and another 2mm chamfer on the shoulder of the 55mm diameter section where it meets the 30mm neck."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Parting Tool",
+            "tool_speed": "400 RPM",
+            "description": "Cut the finished part from the remaining stock at a total length of 135mm (Z-135)."
+        }
+    ],
+    "all_reasoning_process": "The process begins by analyzing the engineering drawing to identify five distinct axial sections: a 60mm diameter base (35mm long), a 45mm diameter groove (10mm long), a 55mm diameter middle section (40mm long), a 30mm diameter neck (40mm long), and a 35mm diameter end cap (10mm long). The total length of the part is 135mm, which fits within the 150mm raw stock. \n\nThe machining sequence is planned to maximize rigidity by working from the largest diameter down to the smallest. First, the stock is faced and turned to the maximum required diameter (60mm). Then, successive step-turning operations reduce the diameters for the front sections. The transition from 55mm to 30mm and the end cap at 35mm require careful sequencing: the front 50mm is first turned to 35mm, and then the inner 40mm of that section is turned down to 30mm to leave the 10mm end cap. \n\nGrooving is used for the 45mm diameter section because it is located between two larger diameters (60mm and 55mm). Chamfering is performed at the end to clean up edges as specified (2mm chamfers). Finally, the part is separated from the stock using a parting tool. Tool speeds are selected based on standard cast iron machining parameters, ranging from 400 RPM for heavy grooving/parting to 800 RPM for finishing and facing.",
+    "step_by_step_plan": "1. Secure the 65mm x 150mm cast iron bar in the lathe chuck, ensuring at least 140mm is exposed.\n2. Use a facing tool at 800 RPM to clean the front face and set the Z-axis zero point.\n3. Use a turning tool at 600 RPM to rough turn the entire 135mm length to a 60mm diameter.\n4. From the front face, turn a 100mm length down to 55mm diameter.\n5. From the front face, turn a 50mm length down to 35mm diameter.\n6. Using a turning or wide grooving tool, reduce the diameter of the section between 10mm and 50mm from the face to 30mm.\n7. Use a 10mm wide grooving tool to cut a recess to 45mm diameter at a distance of 90mm to 100mm from the front face.\n8. Apply 2mm chamfers to the front edge of the part and the shoulder of the 55mm section using a chamfering tool at 800 RPM.\n9. Verify all dimensions against the drawing.\n10. Use a parting tool at 400 RPM to cut the part to its final length of 135mm."
+}

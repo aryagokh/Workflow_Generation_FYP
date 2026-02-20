@@ -1,0 +1,54 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing",
+            "tool_speed": "1000 RPM",
+            "description": "Face the front end of the 65 mm diameter cast iron bar to create a flat reference surface and establish the Z-zero coordinate."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning",
+            "tool_speed": "800 RPM",
+            "description": "Rough turn the entire length of the part (120 mm plus clearance) from the raw 65 mm diameter down to 60.5 mm, leaving material for finishing."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning",
+            "tool_speed": "800 RPM",
+            "description": "Reduce the diameter of the first 90 mm of the part (from the front face) to 45.5 mm, preparing the sections for the 45 mm, 30 mm, and 15 mm diameters."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning",
+            "tool_speed": "800 RPM",
+            "description": "Reduce the diameter of the first 60 mm of the part (from the front face) to 30.5 mm, preparing the sections for the 30 mm and 15 mm diameters."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning",
+            "tool_speed": "800 RPM",
+            "description": "Reduce the diameter of the first 10 mm of the part to 15.5 mm."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Turning",
+            "tool_speed": "1200 RPM",
+            "description": "Perform finishing passes on all four diameters (15 mm, 30 mm, 45 mm, 60 mm) and the vertical shoulders to achieve the final dimensions and required surface finish."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Chamfering",
+            "tool_speed": "800 RPM",
+            "description": "Apply 0.5 mm x 45-degree chamfers to the outer edges of each step to remove sharp burrs and improve safety."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Turning",
+            "tool_speed": "500 RPM",
+            "description": "Using a parting tool or narrow turning tool, cut the finished part to its final total length of 120 mm from the front face."
+        }
+    ],
+    "reasoning": "The manufacturing process begins by analyzing the raw stock (65 mm diameter, 150 mm length cast iron) and the final part dimensions. The part consists of four distinct cylindrical steps with diameters of 15 mm, 30 mm, 45 mm, and 60 mm, with a total cumulative length of 120 mm. \n\n1. **Setup**: The stock is clamped in a CNC lathe chuck with approximately 130-140 mm protruding to allow for machining and parting.\n2. **Facing**: Essential to establish a clean Z-axis zero point.\n3. **Roughing Sequence**: To maintain structural rigidity, we work from the largest diameter to the smallest. First, the entire part is turned to the maximum diameter (60 mm). Then, subsequent 'Step Turning' operations reduce the diameter of the forward sections. \n   - The 45 mm section and everything in front of it (total 90 mm length) is turned.\n   - The 30 mm section and everything in front of it (total 60 mm length) is turned.\n   - The 15 mm tip (10 mm length) is turned.\n4. **Finishing**: High-speed passes ensure the tightest tolerances on diameters and clean shoulders.\n5. **Deburring**: Chamfering is applied to the edges as per standard engineering practice.\n6. **Parting**: Since the raw stock is 150 mm and the part is 120 mm, a final cutoff operation is required.",
+    "step_by_step_plan": "1. Secure the 65mm x 150mm cast iron bar in the lathe chuck, ensuring at least 130mm of the bar is extending out.\n2. Load the Facing tool and face the end of the bar at 1000 RPM to set the Z=0 reference.\n3. Load the Turning tool. Rough turn the outer diameter to 60.5mm for a length of 125mm from the face.\n4. Use Step Turning logic to reduce the diameter to 45.5mm starting from the front face up to a depth of 90mm.\n5. Continue Step Turning to reduce the diameter to 30.5mm from the front face up to a depth of 60mm.\n6. Perform the final Step Turning to reduce the tip diameter to 15.5mm for a length of 10mm.\n7. Switch to a finishing tool (or use the same turning tool with higher speed) to finish the 15mm, 30mm, 45mm, and 60mm diameters to exact size at 1200 RPM. Ensure the shoulders are faced cleanly at Z=-10, Z=-60, and Z=-90.\n8. Use the Chamfering tool to add small 0.5mm breaks on all external corners.\n9. Finally, use a parting tool to cut the piece at Z=-120mm to separate the finished 120mm long part from the remaining stock."
+}

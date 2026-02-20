@@ -1,0 +1,36 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Right-hand Facing Tool",
+            "tool_speed": "500 RPM",
+            "description": "Face the front end of the 65 mm diameter cast iron bar to establish a clean, flat datum surface and set the Z-zero coordinate."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Perform outer diameter turning to reduce the raw stock from 65 mm to 50 mm over a length of 125 mm from the front face."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Perform step turning to reduce the diameter from 50 mm to 30 mm for a length of 75 mm (covering the 65 mm and 10 mm sections) from the front face."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Perform the final step turning to reduce the diameter from 30 mm to 15 mm for a length of 10 mm from the front face."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Parting Tool",
+            "tool_speed": "350 RPM",
+            "description": "Cut the finished part from the remaining stock at a distance of 125 mm from the front face, ensuring a clean separation."
+        }
+    ],
+    "reasoning": "The part consists of three distinct cylindrical sections with diameters of 50 mm, 30 mm, and 15 mm. The total length of the part is 125 mm (50 + 65 + 10). Starting with a 65 mm diameter bar, the sequence must involve reducing the diameter in stages to maintain structural rigidity. Facing is the first priority to establish a reference point. Then, the entire part length is turned to the largest required diameter (50 mm). Following this, step turning is used to create the 30 mm and 15 mm sections sequentially from the end of the workpiece. Finally, the part is separated from the raw stock using a parting tool. Cast iron requires moderate speeds and no coolant is typically used due to its graphite content acting as a lubricant, though speeds are adjusted based on the decreasing diameter to maintain surface speed.",
+    "step_by_step_plan": "1. Secure the 65 mm diameter cast iron bar in the CNC lathe chuck, ensuring at least 135 mm of material is protruding to allow for machining and parting clearance.\n2. Load the Right-hand Facing Tool and face the end of the bar to create a smooth reference surface.\n3. Use a Rough Turning Tool to reduce the diameter of the first 125 mm of the bar from 65 mm down to 50 mm. This establishes the base diameter for the largest section.\n4. Perform a step turning operation to reduce the diameter from 50 mm to 30 mm over a length of 75 mm measured from the front face. This creates the middle section and the base for the smallest section.\n5. Perform a final step turning operation to reduce the diameter from 30 mm to 15 mm over a length of 10 mm from the front face.\n6. Inspect the dimensions of all three steps (\u00d850x50mm, \u00d830x65mm, \u00d815x10mm) to ensure they meet the drawing specifications.\n7. Switch to a Parting Tool and cut the workpiece at the 125 mm mark from the front face at a lower RPM to ensure safety and a clean finish on the back face."
+}
