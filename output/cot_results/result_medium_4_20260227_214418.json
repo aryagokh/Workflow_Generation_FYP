@@ -1,0 +1,66 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Facing Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Face the front surface of the 65mm diameter cast iron bar to establish a clean Z-zero reference point."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Rough Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Perform a rough turning operation to reduce the outer diameter of the stock from 65mm to 60.5mm over a length of 105mm to allow for finishing."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Finish Turning Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Finish turn the first section to a diameter of 60mm for a length of 25mm."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Turn the second step to a diameter of 50mm, starting from 25mm to 45mm from the face."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1200 RPM",
+            "description": "Turn the third step to a diameter of 40mm, starting from 45mm to 60mm from the face."
+        },
+        {
+            "step_number": 6,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1400 RPM",
+            "description": "Turn the fourth step to a diameter of 30mm, starting from 60mm to 70mm from the face."
+        },
+        {
+            "step_number": 7,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1400 RPM",
+            "description": "Turn the fifth step to a diameter of 20mm, starting from 70mm to 80mm from the face."
+        },
+        {
+            "step_number": 8,
+            "tool_name": "Step Turning Tool",
+            "tool_speed": "1500 RPM",
+            "description": "Turn the final step to a diameter of 10mm, starting from 80mm to 100mm from the face."
+        },
+        {
+            "step_number": 9,
+            "tool_name": "Chamfering Tool",
+            "tool_speed": "1000 RPM",
+            "description": "Apply chamfers as specified: 3mm at \u00d860 shoulder, 2mm at \u00d850 shoulder, 2mm at \u00d840 shoulder, 1mm at \u00d830 shoulder, 0.5mm at \u00d820 shoulder, and 0.5mm at the front edge of the \u00d810 section."
+        },
+        {
+            "step_number": 10,
+            "tool_name": "Parting Tool",
+            "tool_speed": "600 RPM",
+            "description": "Cut the finished part from the remaining stock at the 100mm mark."
+        }
+    ],
+    "reasoning": "The manufacturing process for this multi-stepped shaft begins with analyzing the raw stock (65mm diameter cast iron) and the final dimensions. The total length of the part is 100mm (25+20+15+10+10+20). Since the raw stock is 150mm, we have ample material for chucking. \n\n1. **Setup**: The part has six distinct diameters (60, 50, 40, 30, 20, 10). The most efficient way to turn this is from the largest diameter to the smallest to maintain workpiece rigidity.\n2. **Facing**: Essential for setting the Z-axis zero point.\n3. **Roughing**: We reduce the 65mm stock to slightly above 60mm to prepare for finishing.\n4. **Step Turning**: We proceed in sequence. Each step is defined by its diameter and cumulative length from the face. \n   - Z=0 to 25: \u00d860\n   - Z=25 to 45: \u00d850\n   - Z=45 to 60: \u00d840\n   - Z=60 to 70: \u00d830\n   - Z=70 to 80: \u00d820\n   - Z=80 to 100: \u00d810\n5. **Chamfering**: The drawing specifies various chamfer sizes at each transition. These are best performed after the diameters are established but before parting to ensure clean edges.\n6. **Speeds**: Cast iron is abrasive, so carbide tools are preferred. Speeds are increased as the diameter decreases to maintain a consistent surface feet per minute (SFM) and improve finish on the smaller diameters.\n7. **Parting**: The final operation to separate the 100mm part from the 150mm stock.",
+    "step_by_step_plan": "1. Secure the 65mm x 150mm cast iron bar in the CNC lathe chuck, ensuring at least 110mm of the bar extends beyond the jaws.\n2. Load the facing tool and face the end of the bar to create a flat reference surface. Set this as Z=0.\n3. Use a roughing tool to turn the entire length of 105mm down to 60.5mm diameter. Use a speed of 800 RPM.\n4. Switch to a finish turning tool. Turn the first 25mm to exactly 60mm diameter.\n5. Continue turning the next section (from Z=25 to Z=45) down to 50mm diameter.\n6. Continue turning the next section (from Z=45 to Z=60) down to 40mm diameter.\n7. Continue turning the next section (from Z=60 to Z=70) down to 30mm diameter. Increase speed to 1400 RPM for better finish on smaller diameters.\n8. Continue turning the next section (from Z=70 to Z=80) down to 20mm diameter.\n9. Turn the final section (from Z=80 to Z=100) down to 10mm diameter. Increase speed to 1500 RPM.\n10. Load the chamfering tool. Program the tool to create a 3mm chamfer at the Z=25 shoulder, 2mm at Z=45, 2mm at Z=60, 1mm at Z=70, 0.5mm at Z=80, and a 0.5mm chamfer on the front tip (Z=100).\n11. Verify all dimensions with a micrometer or caliper.\n12. Load the parting tool. Reduce speed to 600 RPM and cut the part off at the Z=0 plane (back side of the \u00d860 section)."
+}

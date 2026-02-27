@@ -1,0 +1,36 @@
+{
+    "steps": [
+        {
+            "step_number": 1,
+            "tool_name": "Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Face the front end of the 65mm diameter cast iron bar to create a flat reference surface and set the Z-axis zero point."
+        },
+        {
+            "step_number": 2,
+            "tool_name": "Turning Tool",
+            "tool_speed": "500 RPM",
+            "description": "Rough turn the outer diameter of the bar from 65mm down to 60mm for a total length of 100mm from the faced end."
+        },
+        {
+            "step_number": 3,
+            "tool_name": "Turning Tool",
+            "tool_speed": "800 RPM",
+            "description": "Perform step turning to create the profile: turn to Dia 50mm for 75mm length, Dia 40mm for 55mm length, Dia 30mm for 40mm length, Dia 20mm for 30mm length, and Dia 10mm for 20mm length (all measured from the front face)."
+        },
+        {
+            "step_number": 4,
+            "tool_name": "Turning Tool",
+            "tool_speed": "600 RPM",
+            "description": "Apply chamfers as specified: 0.5mm on the 10mm tip and 20mm shoulder, 1mm on the 30mm shoulder, 2mm on the 40mm and 50mm shoulders, and 3mm on the 60mm shoulder."
+        },
+        {
+            "step_number": 5,
+            "tool_name": "Parting Tool",
+            "tool_speed": "400 RPM",
+            "description": "Part off the finished workpiece from the remaining stock at a distance of 100mm from the front face."
+        }
+    ],
+    "reasoning": "The part is a multi-diameter stepped shaft made of cast iron. The manufacturing strategy involves starting with the largest diameter and progressively turning down to the smallest sections to maintain workpiece rigidity. The total length of the part is calculated as 100mm (25+20+15+10+10+20). The process begins with facing for a reference, followed by roughing the main stock to the maximum part diameter (60mm). Then, sequential step turning is performed from the front face to define the various diameters. Chamfering is performed as a finishing touch at each transition before the final parting-off operation separates the finished part from the raw stock.",
+    "step_by_step_plan": "1. Secure the 65mm x 150mm cast iron bar in the lathe chuck with approximately 115mm protruding. \n2. Use a carbide turning tool to face the end of the workpiece. \n3. Turn the outer diameter to 60mm for a length of 100mm. \n4. Beginning from the front face, turn the first 20mm to a diameter of 10mm. \n5. Turn the section from 20mm to 30mm to a diameter of 20mm. \n6. Turn the section from 30mm to 40mm to a diameter of 30mm. \n7. Turn the section from 40mm to 55mm to a diameter of 40mm. \n8. Turn the section from 55mm to 75mm to a diameter of 50mm. \n9. Use the turning tool to cut the 45-degree chamfers: 0.5mm at the front tip and the 20mm step; 1mm at the 30mm step; 2mm at the 40mm and 50mm steps; and 3mm at the 60mm step. \n10. Finally, use a parting tool to cut the part at the 100mm mark while maintaining a steady feed to ensure a clean finish on the back face."
+}
