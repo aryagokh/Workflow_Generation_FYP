@@ -1,0 +1,11 @@
+pair,U,p,sig
+zero_shot vs cot,109.0,0.899042635232144,ns
+zero_shot vs guided_cot,99.0,0.5845093882384672,ns
+zero_shot vs tot,124.0,0.6446476780913333,ns
+zero_shot vs got,96.0,0.4987308692844131,ns
+cot vs guided_cot,91.0,0.3805883146314787,ns
+cot vs tot,129.0,0.5048224414194648,ns
+cot vs got,84.0,0.24087965092864738,ns
+guided_cot vs tot,155.0,0.0805793170456804,ns
+guided_cot vs got,104.0,0.7379628538251183,ns
+tot vs got,62.0,0.037084589635237544,*

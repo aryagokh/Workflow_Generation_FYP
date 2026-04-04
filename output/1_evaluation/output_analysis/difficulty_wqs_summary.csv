@@ -1,0 +1,4 @@
+category,mean,std,median,count
+simple,0.8278,0.1503,0.802,25
+medium,0.7442,0.3067,0.9188,25
+hard,0.6611,0.3398,0.7144,25

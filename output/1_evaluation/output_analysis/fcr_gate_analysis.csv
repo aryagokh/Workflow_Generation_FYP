@@ -1,0 +1,6 @@
+technique,Passed,Total,Pass Rate
+zero_shot,14,15,0.933
+cot,15,15,1.0
+guided_cot,15,15,1.0
+tot,13,15,0.867
+got,15,15,1.0
