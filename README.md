@@ -1,4 +1,9 @@
 # Workflow_Generation_FYP
 
 
-Lets do it. Bring revolution. Make change
+## Final year project
+
+#### Group Members:
+* Arya Gokhale
+* Aaryaman Shinde
+* Dhruv C. Shah
